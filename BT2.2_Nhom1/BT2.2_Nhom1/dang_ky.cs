@@ -129,11 +129,6 @@ namespace BT2._2_Nhom1
 
             // Xong
             MessageBox.Show("Đăng ký tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            dang_nhap formDangNhap = new dang_nhap();
-            formDangNhap.Show();
-
-            this.Hide();
         }
 
 
@@ -150,14 +145,6 @@ namespace BT2._2_Nhom1
         private void txtthoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dang_nhap_ngay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            dang_nhap formDangNhap = new dang_nhap();
-            formDangNhap.Show();
-
-            this.Hide();
         }
     }
 }
