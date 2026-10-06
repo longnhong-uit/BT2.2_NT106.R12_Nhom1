@@ -36,6 +36,8 @@
             btn_dang_nhap = new Button();
             btn_thoat = new Button();
             llb_quen_mk = new LinkLabel();
+            lb_ques = new Label();
+            llb_dangky = new LinkLabel();
             SuspendLayout();
             // 
             // lb_dang_nhap
@@ -118,11 +120,35 @@
             llb_quen_mk.TabStop = true;
             llb_quen_mk.Text = "Quên mật khẩu?";
             // 
+            // lb_ques
+            // 
+            lb_ques.AutoSize = true;
+            lb_ques.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lb_ques.Location = new Point(246, 390);
+            lb_ques.Name = "lb_ques";
+            lb_ques.Size = new Size(146, 20);
+            lb_ques.TabIndex = 8;
+            lb_ques.Text = "Chưa có tài khoản?";
+            // 
+            // llb_dangky
+            // 
+            llb_dangky.AutoSize = true;
+            llb_dangky.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            llb_dangky.Location = new Point(398, 390);
+            llb_dangky.Name = "llb_dangky";
+            llb_dangky.Size = new Size(106, 20);
+            llb_dangky.TabIndex = 9;
+            llb_dangky.TabStop = true;
+            llb_dangky.Text = "Đăng ký ngay";
+            llb_dangky.LinkClicked += llb_dangky_LinkClicked;
+            // 
             // dang_nhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(llb_dangky);
+            Controls.Add(lb_ques);
             Controls.Add(llb_quen_mk);
             Controls.Add(btn_thoat);
             Controls.Add(btn_dang_nhap);
@@ -147,5 +173,7 @@
         private Button btn_dang_nhap;
         private Button btn_thoat;
         private LinkLabel llb_quen_mk;
+        private Label lb_ques;
+        private LinkLabel llb_dangky;
     }
 }
