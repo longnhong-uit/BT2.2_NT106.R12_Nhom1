@@ -40,6 +40,8 @@
             btndangky = new Button();
             huy = new Button();
             txtthoat = new Button();
+            da_co_tk_chua = new Label();
+            dang_nhap_ngay = new LinkLabel();
             SuspendLayout();
             // 
             // DangKy
@@ -56,7 +58,7 @@
             // 
             SDT_dang_nhap.AutoSize = true;
             SDT_dang_nhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            SDT_dang_nhap.Location = new Point(86, 105);
+            SDT_dang_nhap.Location = new Point(151, 92);
             SDT_dang_nhap.Name = "SDT_dang_nhap";
             SDT_dang_nhap.Size = new Size(115, 20);
             SDT_dang_nhap.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             ho_ten.AutoSize = true;
             ho_ten.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            ho_ten.Location = new Point(86, 184);
+            ho_ten.Location = new Point(151, 143);
             ho_ten.Name = "ho_ten";
             ho_ten.Size = new Size(76, 20);
             ho_ten.TabIndex = 2;
@@ -76,7 +78,7 @@
             // 
             mat_khau.AutoSize = true;
             mat_khau.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            mat_khau.Location = new Point(86, 259);
+            mat_khau.Location = new Point(151, 197);
             mat_khau.Name = "mat_khau";
             mat_khau.Size = new Size(75, 20);
             mat_khau.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             xac_nhan_mat_khau.AutoSize = true;
             xac_nhan_mat_khau.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            xac_nhan_mat_khau.Location = new Point(86, 338);
+            xac_nhan_mat_khau.Location = new Point(151, 254);
             xac_nhan_mat_khau.Name = "xac_nhan_mat_khau";
             xac_nhan_mat_khau.Size = new Size(143, 20);
             xac_nhan_mat_khau.TabIndex = 4;
@@ -94,21 +96,21 @@
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(266, 105);
+            txtSDT.Location = new Point(331, 92);
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(305, 27);
             txtSDT.TabIndex = 5;
             // 
             // txtHoTen
             // 
-            txtHoTen.Location = new Point(266, 184);
+            txtHoTen.Location = new Point(331, 143);
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Size = new Size(305, 27);
             txtHoTen.TabIndex = 6;
             // 
             // txtMatKhau
             // 
-            txtMatKhau.Location = new Point(266, 259);
+            txtMatKhau.Location = new Point(331, 197);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(305, 27);
@@ -116,7 +118,7 @@
             // 
             // txtXacNhan
             // 
-            txtXacNhan.Location = new Point(266, 338);
+            txtXacNhan.Location = new Point(331, 254);
             txtXacNhan.Name = "txtXacNhan";
             txtXacNhan.PasswordChar = '*';
             txtXacNhan.Size = new Size(305, 27);
@@ -152,11 +154,36 @@
             txtthoat.UseVisualStyleBackColor = true;
             txtthoat.Click += txtthoat_Click;
             // 
+            // da_co_tk_chua
+            // 
+            da_co_tk_chua.AutoSize = true;
+            da_co_tk_chua.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            da_co_tk_chua.Location = new Point(257, 313);
+            da_co_tk_chua.Name = "da_co_tk_chua";
+            da_co_tk_chua.Size = new Size(128, 20);
+            da_co_tk_chua.TabIndex = 12;
+            da_co_tk_chua.Text = "Đã có tài khoản?";
+            // 
+            // dang_nhap_ngay
+            // 
+            dang_nhap_ngay.AutoSize = true;
+            dang_nhap_ngay.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            dang_nhap_ngay.LinkColor = Color.Black;
+            dang_nhap_ngay.Location = new Point(391, 313);
+            dang_nhap_ngay.Name = "dang_nhap_ngay";
+            dang_nhap_ngay.Size = new Size(136, 20);
+            dang_nhap_ngay.TabIndex = 13;
+            dang_nhap_ngay.TabStop = true;
+            dang_nhap_ngay.Text = "Đăng nhập ngay!!";
+            dang_nhap_ngay.LinkClicked += dang_nhap_ngay_LinkClicked;
+            // 
             // dang_ky
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dang_nhap_ngay);
+            Controls.Add(da_co_tk_chua);
             Controls.Add(txtthoat);
             Controls.Add(huy);
             Controls.Add(btndangky);
@@ -189,5 +216,7 @@
         private Button btndangky;
         private Button huy;
         private Button txtthoat;
+        private Label da_co_tk_chua;
+        private LinkLabel dang_nhap_ngay;
     }
 }
