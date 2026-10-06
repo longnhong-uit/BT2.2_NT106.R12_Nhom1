@@ -1,0 +1,10 @@
+CREATE DATABASE QuanLy_Nhom1;
+GO
+USE QuanLy_Nhom1;
+GO
+
+CREATE TABLE NguoiDung (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    TaiKhoan VARCHAR(50),
+    MatKhau VARCHAR(50)
+);
