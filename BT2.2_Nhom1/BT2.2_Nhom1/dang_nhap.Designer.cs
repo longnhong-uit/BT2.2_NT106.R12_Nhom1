@@ -74,6 +74,7 @@
             txt_SDT.Name = "txt_SDT";
             txt_SDT.Size = new Size(263, 40);
             txt_SDT.TabIndex = 3;
+            txt_SDT.KeyPress += txt_SDT_KeyPress;
             // 
             // txt_password
             // 
@@ -93,6 +94,7 @@
             btn_dang_nhap.TabIndex = 5;
             btn_dang_nhap.Text = "ĐĂNG NHẬP";
             btn_dang_nhap.UseVisualStyleBackColor = true;
+            btn_dang_nhap.Click += btn_dang_nhap_Click;
             // 
             // btn_thoat
             // 
@@ -103,6 +105,7 @@
             btn_thoat.TabIndex = 6;
             btn_thoat.Text = "THOÁT";
             btn_thoat.UseVisualStyleBackColor = true;
+            btn_thoat.Click += btn_thoat_Click;
             // 
             // llb_quen_mk
             // 
