@@ -18,6 +18,8 @@ namespace BT2._2_Nhom1
 
         private void btndangky_Click(object sender, EventArgs e)
         {
+            btndangky.Enabled = false;
+
             string sdt = txtSDT.Text.Trim();
             string hoTen = txtHoTen.Text.Trim();
             string matKhau = txtMatKhau.Text;
@@ -29,6 +31,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Số điện thoại không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSDT.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -37,6 +40,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("SĐT phải bắt đầu bằng số 0 và chỉ chứa các chữ số (0-9), không chứa khoảng trắng hay ký tự đặc biệt! và phải đủ 10 chữ số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSDT.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -46,6 +50,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Số điện thoại này đã có tài khoản đăng ký!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtSDT.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -54,6 +59,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Họ và tên không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHoTen.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -62,6 +68,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Họ và tên phải từ 2 đến 50 ký tự!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHoTen.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -70,6 +77,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Họ và tên chỉ chứa chữ cái và khoảng trắng, không chứa số hay ký tự đặc biệt!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHoTen.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -78,6 +86,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Mật khẩu không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -86,6 +95,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Mật khẩu phải có tối thiểu 8 ký tự!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -94,6 +104,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Mật khẩu không được chứa khoảng trắng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -107,6 +118,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Mật khẩu yếu! Phải chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ký tự đặc biệt.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatKhau.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -116,6 +128,7 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Vui lòng nhập xác nhận mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtXacNhan.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
@@ -124,16 +137,24 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Xác nhận mật khẩu không trùng khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtXacNhan.Focus();
+                btndangky.Enabled = true;
                 return;
             }
 
             // Xong
             MessageBox.Show("Đăng ký tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btndangky.Enabled = true;
+
+            dang_nhap DangNhap = new dang_nhap();
+            DangNhap.Show();
+            this.Hide();
         }
 
 
         private void huy_Click(object sender, EventArgs e)
         {
+            huy.Enabled = false;
+
             txtSDT.Clear();
             txtHoTen.Clear();
             txtMatKhau.Clear();
@@ -144,7 +165,16 @@ namespace BT2._2_Nhom1
 
         private void txtthoat_Click(object sender, EventArgs e)
         {
+            txtthoat.Enabled = false;
+
             this.Close();
+        }
+
+        private void dang_nhap_ngay_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dang_nhap DangNhap = new dang_nhap();
+            DangNhap.Show();
+            this.Hide();
         }
     }
 }
