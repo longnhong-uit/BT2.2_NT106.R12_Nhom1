@@ -119,6 +119,7 @@
             llb_quen_mk.TabIndex = 7;
             llb_quen_mk.TabStop = true;
             llb_quen_mk.Text = "Quên mật khẩu?";
+            llb_quen_mk.LinkClicked += llb_quen_mk_LinkClicked;
             // 
             // lb_ques
             // 

@@ -2,6 +2,8 @@ namespace BT2._2_Nhom1
 {
     public partial class dang_nhap : Form
     {
+        string otpHeThongTaoRa = "";
+
         public dang_nhap()
         {
             InitializeComponent();
@@ -63,6 +65,11 @@ namespace BT2._2_Nhom1
             dang_ky frm = new dang_ky();
             frm.Show();
             this.Hide();
+        }
+
+        private void llb_quen_mk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
         }
     }
 }
