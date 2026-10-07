@@ -2,6 +2,8 @@ namespace BT2._2_Nhom1
 {
     public partial class dang_nhap : Form
     {
+        string otpHeThongTaoRa = "";
+
         public dang_nhap()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace BT2._2_Nhom1
             }
         }
 
-      
+
         private void btn_dang_nhap_Click(object sender, EventArgs e)
         {
             string sdt = txt_SDT.Text;
@@ -56,6 +58,18 @@ namespace BT2._2_Nhom1
             {
                 MessageBox.Show("Số điện thoại hoặc mật khẩu không chính xác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void llb_dangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dang_ky frm = new dang_ky();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void llb_quen_mk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
         }
     }
 }
