@@ -3,6 +3,7 @@ namespace BT2._2_Nhom1
     public partial class dang_nhap : Form
     {
         string otpHeThongTaoRa = "";
+        bool hopLe = true;
 
         public dang_nhap()
         {
@@ -33,16 +34,8 @@ namespace BT2._2_Nhom1
             string sdt = txt_SDT.Text;
             string matkhau = txt_password.Text;
 
-            if (sdt == "" || matkhau == "")
+            if (!hopLe)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Số điện thoại và Mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (sdt.Length != 10 || !sdt.StartsWith("0"))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ! Vui lòng nhập số điện thoại gồm 10 chữ số và bắt đầu bằng số 0.", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_SDT.Focus();
                 return;
             }
 
@@ -69,7 +62,42 @@ namespace BT2._2_Nhom1
 
         private void llb_quen_mk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
+        }
+
+        private void txt_SDT_Leave(object sender, EventArgs e)
+        {
+            string sdt = txt_SDT.Text.Trim();
+
+            if (string.IsNullOrEmpty(sdt))
+            {
+                lb_loidangnhap.Text = "Không được để trống SĐT!";
+                hopLe = false;
+            }
+            else if (sdt.Length != 10 || !sdt.StartsWith("0"))
+            {
+                lb_loidangnhap.Text = "SĐT phải gồm 10 số, bắt đầu bằng 0!";
+                hopLe = false;
+            }
+            else
+            {
+                lb_loidangnhap.Text = "";
+                hopLe = true;
+            }
+        }
+
+        private void txt_password_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_password.Text))
+            {
+                lb_loimatkhau.Text = "Không được để trống mật khẩu!";
+                hopLe = false;
+            }
+            else
+            {
+                lb_loimatkhau.Text = "";
+                hopLe = true;
+            }
         }
     }
 }

@@ -38,6 +38,8 @@
             llb_quen_mk = new LinkLabel();
             lb_ques = new Label();
             llb_dangky = new LinkLabel();
+            lb_loidangnhap = new Label();
+            lb_loimatkhau = new Label();
             SuspendLayout();
             // 
             // lb_dang_nhap
@@ -77,6 +79,7 @@
             txt_SDT.Size = new Size(263, 40);
             txt_SDT.TabIndex = 3;
             txt_SDT.KeyPress += txt_SDT_KeyPress;
+            txt_SDT.Leave += txt_SDT_Leave;
             // 
             // txt_password
             // 
@@ -86,6 +89,7 @@
             txt_password.PasswordChar = '*';
             txt_password.Size = new Size(263, 37);
             txt_password.TabIndex = 4;
+            txt_password.Leave += txt_password_Leave;
             // 
             // btn_dang_nhap
             // 
@@ -143,11 +147,31 @@
             llb_dangky.Text = "Đăng ký ngay";
             llb_dangky.LinkClicked += llb_dangky_LinkClicked;
             // 
+            // lb_loidangnhap
+            // 
+            lb_loidangnhap.AutoSize = true;
+            lb_loidangnhap.ForeColor = Color.Crimson;
+            lb_loidangnhap.Location = new Point(601, 161);
+            lb_loidangnhap.Name = "lb_loidangnhap";
+            lb_loidangnhap.Size = new Size(0, 20);
+            lb_loidangnhap.TabIndex = 10;
+            // 
+            // lb_loimatkhau
+            // 
+            lb_loimatkhau.AutoSize = true;
+            lb_loimatkhau.ForeColor = Color.Crimson;
+            lb_loimatkhau.Location = new Point(601, 211);
+            lb_loimatkhau.Name = "lb_loimatkhau";
+            lb_loimatkhau.Size = new Size(0, 20);
+            lb_loimatkhau.TabIndex = 11;
+            // 
             // dang_nhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lb_loimatkhau);
+            Controls.Add(lb_loidangnhap);
             Controls.Add(llb_dangky);
             Controls.Add(lb_ques);
             Controls.Add(llb_quen_mk);
@@ -176,5 +200,7 @@
         private LinkLabel llb_quen_mk;
         private Label lb_ques;
         private LinkLabel llb_dangky;
+        private Label lb_loidangnhap;
+        private Label lb_loimatkhau;
     }
 }
