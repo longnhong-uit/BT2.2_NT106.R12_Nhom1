@@ -30,10 +30,6 @@ namespace BT2._2_Nhom1
     }
     public partial class dang_nhap : Form
     {
-
-        private const string ChuoiKetNoi =
-            @"Server=localhost\SQLEXPRESS;Database=QuanLyNguoiDung;" +
-            @"Trusted_Connection=True;TrustServerCertificate=True;";
         bool hopLeMK = true,
              hopLeSDT = true;
 
@@ -72,55 +68,26 @@ namespace BT2._2_Nhom1
             }
 
             btn_dang_nhap.Enabled = false;
-            try
+            var user = await DataProvider.GetUserPasswordAndSalt(sdt);
+
+            if (user.UserId != -1)
             {
-                using (SqlConnection conn = new SqlConnection(ChuoiKetNoi))
+                if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
-                    await conn.OpenAsync();
-
-                    string query = "SELECT MatKhauBam, Salt FROM Users WHERE TenDangNhap = @TenDangNhap";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@TenDangNhap", sdt);
-
-                        using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
-                        {
-                            if (reader.Read())
-                            {
-                                string dbHash = reader["MatKhauBam"].ToString().Trim();
-                                string dbSalt = reader["Salt"].ToString().Trim();
-
-                                bool dungMatKhau = MatKhau.KiemTra(matkhau, dbSalt, dbHash);
-
-                                if (dungMatKhau)
-                                {
-                                    MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    giaodien frm = new giaodien();
-                                    frm.Show();
-                                    this.Hide();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
+                    MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    giaodien frm = new giaodien();
+                    frm.Show();
+                    this.Hide();
                 }
-            }
-            catch (Exception ex)
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } else
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                btn_dang_nhap.Enabled = true;
-            }
+            btn_dang_nhap.Enabled = true;
         }
 
         private void llb_dangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

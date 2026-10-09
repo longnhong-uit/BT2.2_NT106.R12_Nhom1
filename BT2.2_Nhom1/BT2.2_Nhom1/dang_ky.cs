@@ -141,6 +141,16 @@ namespace BT2._2_Nhom1
                 return;
             }
 
+            var (salt, password) = MatKhau.Tao(matKhau);
+            var user = new User()
+            {
+                TenDangNhap = sdt,
+                MatKhauBam = password,
+                Salt = salt,
+                HoTen = hoTen
+            };
+            DataProvider.AddUser(user);
+
             // Xong
             MessageBox.Show("Đăng ký tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btndangky.Enabled = true;
