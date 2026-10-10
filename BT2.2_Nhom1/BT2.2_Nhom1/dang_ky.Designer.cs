@@ -42,6 +42,8 @@
             txtthoat = new Button();
             co_tk_chua = new Label();
             dang_nhap_ngay = new LinkLabel();
+            email = new Label();
+            txtEmail = new TextBox();
             SuspendLayout();
             // 
             // DangKy
@@ -96,21 +98,21 @@
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(338, 100);
+            txtSDT.Location = new Point(315, 100);
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(305, 27);
             txtSDT.TabIndex = 5;
             // 
             // txtHoTen
             // 
-            txtHoTen.Location = new Point(338, 144);
+            txtHoTen.Location = new Point(315, 144);
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Size = new Size(305, 27);
             txtHoTen.TabIndex = 6;
             // 
             // txtMatKhau
             // 
-            txtMatKhau.Location = new Point(338, 189);
+            txtMatKhau.Location = new Point(315, 189);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '*';
             txtMatKhau.Size = new Size(305, 27);
@@ -118,7 +120,7 @@
             // 
             // txtXacNhan
             // 
-            txtXacNhan.Location = new Point(338, 233);
+            txtXacNhan.Location = new Point(315, 233);
             txtXacNhan.Name = "txtXacNhan";
             txtXacNhan.PasswordChar = '*';
             txtXacNhan.Size = new Size(305, 27);
@@ -158,7 +160,7 @@
             // 
             co_tk_chua.AutoSize = true;
             co_tk_chua.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            co_tk_chua.Location = new Point(250, 308);
+            co_tk_chua.Location = new Point(250, 326);
             co_tk_chua.Name = "co_tk_chua";
             co_tk_chua.Size = new Size(139, 23);
             co_tk_chua.TabIndex = 12;
@@ -169,7 +171,7 @@
             dang_nhap_ngay.AutoSize = true;
             dang_nhap_ngay.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dang_nhap_ngay.LinkColor = Color.FromArgb(64, 0, 0);
-            dang_nhap_ngay.Location = new Point(395, 308);
+            dang_nhap_ngay.Location = new Point(395, 326);
             dang_nhap_ngay.Name = "dang_nhap_ngay";
             dang_nhap_ngay.Size = new Size(152, 23);
             dang_nhap_ngay.TabIndex = 13;
@@ -177,11 +179,30 @@
             dang_nhap_ngay.Text = "Đăng nhập ngay!!!";
             dang_nhap_ngay.LinkClicked += dang_nhap_ngay_LinkClicked;
             // 
+            // email
+            // 
+            email.AutoSize = true;
+            email.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            email.Location = new Point(159, 289);
+            email.Name = "email";
+            email.Size = new Size(47, 20);
+            email.TabIndex = 14;
+            email.Text = "Email";
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(315, 282);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(305, 27);
+            txtEmail.TabIndex = 15;
+            // 
             // dang_ky
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtEmail);
+            Controls.Add(email);
             Controls.Add(dang_nhap_ngay);
             Controls.Add(co_tk_chua);
             Controls.Add(txtthoat);
@@ -218,5 +239,7 @@
         private Button txtthoat;
         private Label co_tk_chua;
         private LinkLabel dang_nhap_ngay;
+        private Label email;
+        private TextBox txtEmail;
     }
 }
