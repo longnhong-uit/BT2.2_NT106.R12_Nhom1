@@ -24,6 +24,7 @@ namespace BT2._2_Nhom1
             string hoTen = txtHoTen.Text.Trim();
             string matKhau = txtMatKhau.Text;
             string xacNhan = txtXacNhan.Text;
+            string email = txtEmail.Text.Trim();
 
             // 1. KIỂM TRA SĐT ĐĂNG NHẬP
             // Không được để trống
@@ -140,7 +141,19 @@ namespace BT2._2_Nhom1
                 btndangky.Enabled = true;
                 return;
             }
-
+            // 5. Email
+            if (email == "")
+            {
+                MessageBox.Show("Vui lòng nhập Email, không được để trống!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+            if (!email.ToLower().EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("Email phải đúng định dạng Gmail (ví dụ: abc@gmail.com)!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
             var (salt, password) = MatKhau.Tao(matKhau);
             var user = new User()
             {
