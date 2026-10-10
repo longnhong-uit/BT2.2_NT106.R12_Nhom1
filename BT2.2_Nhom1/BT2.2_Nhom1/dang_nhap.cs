@@ -51,6 +51,7 @@ namespace BT2._2_Nhom1
             {
                 if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
+                    await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     giaodien frm = new giaodien();
                     frm.Show();
