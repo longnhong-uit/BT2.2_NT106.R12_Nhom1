@@ -9,7 +9,7 @@ namespace BT2._2_Nhom1
 {
     internal class DataProvider
     {
-        const string connString = "Data Source=localhost\\SQL2025DEV;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
+        const string connString = "Data Source=.;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
         private static SqlConnection connection;
 
         public static void OpenConnection()
