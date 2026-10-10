@@ -14,3 +14,4 @@ CREATE TABLE Users (
     LanDangNhapCuoi DATETIME2 NULL
 );
 GO
+
