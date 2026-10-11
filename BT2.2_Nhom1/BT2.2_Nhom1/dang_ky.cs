@@ -160,7 +160,8 @@ namespace BT2._2_Nhom1
                 TenDangNhap = sdt,
                 MatKhauBam = password,
                 Salt = salt,
-                HoTen = hoTen
+                HoTen = hoTen,
+                Email = email
             };
             DataProvider.AddUser(user);
 
