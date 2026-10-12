@@ -101,6 +101,7 @@ namespace BT2._2_Nhom1
             CloseConnection();
         }
 
+
         public static async Task<bool> IsUserExist(string username)
         {
             OpenConnection();
@@ -118,5 +119,6 @@ namespace BT2._2_Nhom1
             CloseConnection();
             return false;
         }
+
     }
 }

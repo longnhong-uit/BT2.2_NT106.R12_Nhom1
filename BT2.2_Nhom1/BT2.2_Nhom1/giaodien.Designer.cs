@@ -28,12 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "giaodien";
+            lblTrangChinh = new Label();
+            lblXinChao = new Label();
+            lblTenDangNhap = new Label();
+            lblEmail = new Label();
+            lblLanDangNhap = new Label();
+            btnDangXuat = new Button();
+            SuspendLayout();
+            // 
+            // lblTrangChinh
+            // 
+            lblTrangChinh.AutoSize = true;
+            lblTrangChinh.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            lblTrangChinh.Location = new Point(26, 9);
+            lblTrangChinh.Name = "lblTrangChinh";
+            lblTrangChinh.Size = new Size(373, 81);
+            lblTrangChinh.TabIndex = 0;
+            lblTrangChinh.Text = "Trang Chính";
+            lblTrangChinh.Click += label1_Click;
+            // 
+            // lblXinChao
+            // 
+            lblXinChao.AutoSize = true;
+            lblXinChao.Location = new Point(57, 105);
+            lblXinChao.Name = "lblXinChao";
+            lblXinChao.Size = new Size(59, 25);
+            lblXinChao.TabIndex = 1;
+            lblXinChao.Text = "label2";
+            // 
+            // lblTenDangNhap
+            // 
+            lblTenDangNhap.AutoSize = true;
+            lblTenDangNhap.Location = new Point(57, 152);
+            lblTenDangNhap.Name = "lblTenDangNhap";
+            lblTenDangNhap.Size = new Size(59, 25);
+            lblTenDangNhap.TabIndex = 2;
+            lblTenDangNhap.Text = "label3";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(57, 199);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(59, 25);
+            lblEmail.TabIndex = 3;
+            lblEmail.Text = "label4";
+            // 
+            // lblLanDangNhap
+            // 
+            lblLanDangNhap.AutoSize = true;
+            lblLanDangNhap.Location = new Point(57, 248);
+            lblLanDangNhap.Name = "lblLanDangNhap";
+            lblLanDangNhap.Size = new Size(59, 25);
+            lblLanDangNhap.TabIndex = 4;
+            lblLanDangNhap.Text = "label5";
+            // 
+            // btnDangXuat
+            // 
+            btnDangXuat.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnDangXuat.Location = new Point(494, 352);
+            btnDangXuat.Name = "btnDangXuat";
+            btnDangXuat.Size = new Size(185, 47);
+            btnDangXuat.TabIndex = 5;
+            btnDangXuat.Text = "Đăng xuất";
+            btnDangXuat.UseVisualStyleBackColor = true;
+            btnDangXuat.Click += btnDangXuat_Click;
+            // 
+            // giaodien
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnDangXuat);
+            Controls.Add(lblLanDangNhap);
+            Controls.Add(lblEmail);
+            Controls.Add(lblTenDangNhap);
+            Controls.Add(lblXinChao);
+            Controls.Add(lblTrangChinh);
+            Name = "giaodien";
+            Text = "giaodien";
+            Load += giaodien_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblTrangChinh;
+        private Label lblXinChao;
+        private Label lblTenDangNhap;
+        private Label lblEmail;
+        private Label lblLanDangNhap;
+        private Button btnDangXuat;
     }
 }

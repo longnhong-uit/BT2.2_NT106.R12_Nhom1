@@ -10,6 +10,8 @@ namespace BT2._2_Nhom1
         bool hopLeMK = true,
              hopLeSDT = true;
 
+
+
         public dang_nhap()
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace BT2._2_Nhom1
                     lblLoiMatKhau.Text = "";
                     await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    giaodien frm = new giaodien();
+                    giaodien frm = new giaodien(sdt);
                     frm.Show();
                     this.Hide();
                 }
