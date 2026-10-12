@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblTrangchinh = new Label();
+            lblTrangChinh = new Label();
             lblXinChao = new Label();
             lblTenDangNhap = new Label();
             lblEmail = new Label();
             lblLanDangNhap = new Label();
-            BtnDangxuat = new Button();
+            btnDangxuat = new Button();
             SuspendLayout();
             // 
-            // lblTrangchinh
+            // lblTrangChinh
             // 
-            lblTrangchinh.AutoSize = true;
-            lblTrangchinh.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
-            lblTrangchinh.Location = new Point(26, 9);
-            lblTrangchinh.Name = "lblTrangchinh";
-            lblTrangchinh.Size = new Size(373, 81);
-            lblTrangchinh.TabIndex = 0;
-            lblTrangchinh.Text = "Trang Chính";
-            lblTrangchinh.Click += label1_Click;
+            lblTrangChinh.AutoSize = true;
+            lblTrangChinh.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            lblTrangChinh.Location = new Point(26, 9);
+            lblTrangChinh.Name = "lblTrangChinh";
+            lblTrangChinh.Size = new Size(373, 81);
+            lblTrangChinh.TabIndex = 0;
+            lblTrangChinh.Text = "Trang Chính";
+            lblTrangChinh.Click += label1_Click;
             // 
             // lblXinChao
             // 
@@ -83,28 +83,28 @@
             lblLanDangNhap.TabIndex = 4;
             lblLanDangNhap.Text = "label5";
             // 
-            // BtnDangxuat
+            // btnDangxuat
             // 
-            BtnDangxuat.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            BtnDangxuat.Location = new Point(494, 352);
-            BtnDangxuat.Name = "BtnDangxuat";
-            BtnDangxuat.Size = new Size(185, 47);
-            BtnDangxuat.TabIndex = 5;
-            BtnDangxuat.Text = "Đăng xuất";
-            BtnDangxuat.UseVisualStyleBackColor = true;
-            BtnDangxuat.Click += btnDangXuat_Click;
+            btnDangxuat.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnDangxuat.Location = new Point(494, 352);
+            btnDangxuat.Name = "btnDangxuat";
+            btnDangxuat.Size = new Size(185, 47);
+            btnDangxuat.TabIndex = 5;
+            btnDangxuat.Text = "Đăng xuất";
+            btnDangxuat.UseVisualStyleBackColor = true;
+            btnDangxuat.Click += btnDangXuat_Click;
             // 
             // giaodien
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(BtnDangxuat);
+            Controls.Add(btnDangxuat);
             Controls.Add(lblLanDangNhap);
             Controls.Add(lblEmail);
             Controls.Add(lblTenDangNhap);
             Controls.Add(lblXinChao);
-            Controls.Add(lblTrangchinh);
+            Controls.Add(lblTrangChinh);
             Name = "giaodien";
             Text = "giaodien";
             Load += giaodien_Load;
@@ -114,11 +114,11 @@
 
         #endregion
 
-        private Label lblTrangchinh;
+        private Label lblTrangChinh;
         private Label lblXinChao;
         private Label lblTenDangNhap;
         private Label lblEmail;
         private Label lblLanDangNhap;
-        private Button BtnDangxuat;
+        private Button btnDangxuat;
     }
 }
