@@ -49,16 +49,6 @@ namespace BT2._2_Nhom1
                 return;
             }
 
-            //Kiểm tra số điện thoại đã đăng ký
-            bool daTonTai = await DataProvider.IsUserExist(sdt);
-            if (daTonTai)
-            {
-                lblBaoLoiSDT.Text = "Số điện thoại này đã được đăng ký!";
-                btnDangky.Enabled = true;
-                txtSDT.Focus();
-                return;
-            }
-
             // 2. KIỂM TRA HỌ VÀ TÊN
             if (string.IsNullOrEmpty(hoTen))
             {
@@ -150,6 +140,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiEmail.Text = "Vui lòng nhập Email, không được để trống!";
                 txtEmail.Focus();
+                btnDangky.Enabled = true;
                 return;
             }
             if (!email.ToLower().EndsWith("@gmail.com"))
@@ -161,6 +152,17 @@ namespace BT2._2_Nhom1
             }
 
             var (salt, password) = MatKhau.Tao(matKhau);
+            
+            // Kiểm tra xem số điện thoại đã được đăng ký chưa
+            bool daTonTai = await DataProvider.IsUserExist(sdt);
+            if (daTonTai)
+            {
+                lblBaoLoiSDT.Text = "Số điện thoại này đã được đăng ký!";
+                btnDangky.Enabled = true;
+                txtSDT.Focus();
+                return;
+            }
+
             var user = new User()
             {
                 TenDangNhap = sdt,
