@@ -51,6 +51,8 @@ namespace BT2._2_Nhom1
             {
                 if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
+                    lb_loimatkhau.Text = "";
+                    await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     giaodien frm = new giaodien();
                     frm.Show();
@@ -58,12 +60,12 @@ namespace BT2._2_Nhom1
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
                 }
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
             }
             btnDangNhap.Enabled = true;
         }

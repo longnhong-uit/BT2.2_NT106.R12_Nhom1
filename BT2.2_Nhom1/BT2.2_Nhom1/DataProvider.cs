@@ -10,6 +10,7 @@ namespace BT2._2_Nhom1
     internal class DataProvider
     {
         const string connString = "Data Source=.;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
+        //const string connString = "Data Source=localhost\\SQL2025DEV;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
         private static SqlConnection connection;
 
         public static void OpenConnection()
@@ -26,12 +27,13 @@ namespace BT2._2_Nhom1
         public static void AddUser(User user)
         {
             OpenConnection();
-            string query = "INSERT INTO Users (TenDangNhap, MatKhauBam, Salt, HoTen) VALUES (@TenDangNhap, @MatKhauBam, @Salt, @HoTen)";
+            string query = "INSERT INTO Users (TenDangNhap, MatKhauBam, Salt, HoTen, Email) VALUES (@TenDangNhap, @MatKhauBam, @Salt, @HoTen, @Email)";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TenDangNhap", user.TenDangNhap);
             command.Parameters.AddWithValue("@MatKhauBam", user.MatKhauBam);
             command.Parameters.AddWithValue("@Salt", user.Salt);
             command.Parameters.AddWithValue("@HoTen", user.HoTen);
+            command.Parameters.AddWithValue("@Email", user.Email);
 
             command.ExecuteNonQuery();
             CloseConnection();
@@ -86,6 +88,35 @@ namespace BT2._2_Nhom1
 
             CloseConnection();
             return response;
+        }
+
+        public static async Task UpdateLoginDate(string username)
+        {
+            OpenConnection();
+            string query = "UPDATE Users SET LanDangNhapCuoi = @LanDangNhapCuoi WHERE TenDangNhap = @TenDangNhap";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LanDangNhapCuoi", DateTime.Now);
+            command.Parameters.AddWithValue("@TenDangNhap", username);
+            await command.ExecuteNonQueryAsync();
+            CloseConnection();
+        }
+
+        public static async Task<bool> IsUserExist(string username)
+        {
+            OpenConnection();
+            string query = "SELECT UserId FROM Users WHERE TenDangNhap = @TenDangNhap";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TenDangNhap", username);
+            using var reader = await command.ExecuteReaderAsync();
+
+            if (reader.Read())
+            {
+                CloseConnection();
+                return true;
+            }
+
+            CloseConnection();
+            return false;
         }
     }
 }
