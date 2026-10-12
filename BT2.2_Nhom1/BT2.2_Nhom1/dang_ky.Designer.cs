@@ -49,15 +49,23 @@
             lblBaoLoiPassword = new Label();
             lblBaoLoiXacNhanPassword = new Label();
             lblBaoLoiEmail = new Label();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // lblDangKy
             // 
             lblDangKy.AutoSize = true;
-            lblDangKy.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDangKy.Location = new Point(56, 18);
+            lblDangKy.BackColor = Color.White;
+            lblDangKy.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblDangKy.Location = new Point(53, 18);
             lblDangKy.Name = "lblDangKy";
-            lblDangKy.Size = new Size(223, 67);
+            lblDangKy.Size = new Size(122, 37);
             lblDangKy.TabIndex = 0;
             lblDangKy.Text = "Đăng ký";
             // 
@@ -137,6 +145,7 @@
             // 
             // btnDangky
             // 
+            btnDangky.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 163);
             btnDangky.Location = new Point(285, 356);
             btnDangky.Name = "btnDangky";
             btnDangky.Size = new Size(119, 45);
@@ -168,24 +177,24 @@
             // lblDaCoTaiKhoan
             // 
             lblDaCoTaiKhoan.AutoSize = true;
-            lblDaCoTaiKhoan.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDaCoTaiKhoan.Location = new Point(140, 418);
+            lblDaCoTaiKhoan.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Italic);
+            lblDaCoTaiKhoan.Location = new Point(117, 426);
             lblDaCoTaiKhoan.Name = "lblDaCoTaiKhoan";
-            lblDaCoTaiKhoan.Size = new Size(139, 23);
+            lblDaCoTaiKhoan.Size = new Size(145, 23);
             lblDaCoTaiKhoan.TabIndex = 12;
             lblDaCoTaiKhoan.Text = "Đã có tài khoản?";
             // 
             // llbDangNhap
             // 
             llbDangNhap.AutoSize = true;
-            llbDangNhap.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            llbDangNhap.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             llbDangNhap.LinkColor = Color.Black;
-            llbDangNhap.Location = new Point(285, 418);
+            llbDangNhap.Location = new Point(262, 426);
             llbDangNhap.Name = "llbDangNhap";
-            llbDangNhap.Size = new Size(152, 23);
+            llbDangNhap.Size = new Size(142, 23);
             llbDangNhap.TabIndex = 13;
             llbDangNhap.TabStop = true;
-            llbDangNhap.Text = "Đăng nhập ngay!!!";
+            llbDangNhap.Text = "Đăng nhập ngay";
             llbDangNhap.LinkClicked += llbDangNhap_LinkClicked;
             // 
             // lblEmail
@@ -256,11 +265,61 @@
             lblBaoLoiEmail.Size = new Size(0, 16);
             lblBaoLoiEmail.TabIndex = 20;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 192, 0);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 80);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(3, 392);
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 192, 0);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(567, 80);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(3, 392);
+            panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 192, 0);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(3, 469);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(564, 3);
+            panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(0, 192, 0);
+            panel4.Controls.Add(panel5);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(570, 80);
+            panel4.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(lblDangKy);
+            panel5.Location = new Point(3, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(564, 74);
+            panel5.TabIndex = 21;
+            // 
             // dang_ky
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(570, 472);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(lblBaoLoiEmail);
             Controls.Add(lblBaoLoiXacNhanPassword);
             Controls.Add(lblBaoLoiPassword);
@@ -281,9 +340,14 @@
             Controls.Add(lblPassword);
             Controls.Add(lblHo_ten);
             Controls.Add(lblSDT);
-            Controls.Add(lblDangKy);
+            Controls.Add(panel4);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "dang_ky";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "dang_ky";
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -311,5 +375,10 @@
         private Label lblBaoLoiPassword;
         private Label lblBaoLoiXacNhanPassword;
         private Label lblBaoLoiEmail;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
     }
 }

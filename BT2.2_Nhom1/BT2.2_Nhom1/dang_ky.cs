@@ -206,6 +206,5 @@ namespace BT2._2_Nhom1
             DangNhap.Show();
             this.Hide();
         }
-
     }
 }
