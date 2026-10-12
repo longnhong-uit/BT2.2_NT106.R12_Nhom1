@@ -10,6 +10,8 @@ namespace BT2._2_Nhom1
         bool hopLeMK = true,
              hopLeSDT = true;
 
+
+
         public dang_nhap()
         {
             InitializeComponent();
@@ -51,20 +53,23 @@ namespace BT2._2_Nhom1
             {
                 if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
+
+                    lb_loimatkhau.Text = "";
+
                     await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    giaodien frm = new giaodien();
+                    giaodien frm = new giaodien(sdt);
                     frm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    lbLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
+                    lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
                 }
             }
             else
             {
-                lbLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
+                lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
             }
             btnDangNhap.Enabled = true;
         }
