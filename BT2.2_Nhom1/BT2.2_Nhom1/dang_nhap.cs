@@ -53,14 +53,9 @@ namespace BT2._2_Nhom1
             {
                 if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
                     lb_loimatkhau.Text = "";
->>>>>>> a853c6f88a390a211b9e082aa96dae8d9a862d29
-=======
-                    lb_loimatkhau.Text = "";
->>>>>>> 0430a927eb0781d089cf9e32e302492b6fb76a80
+
                     await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     giaodien frm = new giaodien(sdt);

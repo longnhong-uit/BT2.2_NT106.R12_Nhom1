@@ -100,11 +100,7 @@ namespace BT2._2_Nhom1
             await command.ExecuteNonQueryAsync();
             CloseConnection();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0430a927eb0781d089cf9e32e302492b6fb76a80
+
 
         public static async Task<bool> IsUserExist(string username)
         {
@@ -123,9 +119,6 @@ namespace BT2._2_Nhom1
             CloseConnection();
             return false;
         }
-<<<<<<< HEAD
->>>>>>> a853c6f88a390a211b9e082aa96dae8d9a862d29
-=======
->>>>>>> 0430a927eb0781d089cf9e32e302492b6fb76a80
+
     }
 }
