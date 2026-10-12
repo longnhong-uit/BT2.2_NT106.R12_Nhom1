@@ -49,10 +49,10 @@
             // DangKy
             // 
             DangKy.AutoSize = true;
-            DangKy.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DangKy.Location = new Point(40, 9);
+            DangKy.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            DangKy.Location = new Point(60, 33);
             DangKy.Name = "DangKy";
-            DangKy.Size = new Size(223, 67);
+            DangKy.Size = new Size(134, 41);
             DangKy.TabIndex = 0;
             DangKy.Text = "Đăng ký";
             // 
@@ -60,7 +60,7 @@
             // 
             SDT_dang_nhap.AutoSize = true;
             SDT_dang_nhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            SDT_dang_nhap.Location = new Point(158, 100);
+            SDT_dang_nhap.Location = new Point(60, 107);
             SDT_dang_nhap.Name = "SDT_dang_nhap";
             SDT_dang_nhap.Size = new Size(115, 20);
             SDT_dang_nhap.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             ho_ten.AutoSize = true;
             ho_ten.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            ho_ten.Location = new Point(158, 144);
+            ho_ten.Location = new Point(60, 151);
             ho_ten.Name = "ho_ten";
             ho_ten.Size = new Size(76, 20);
             ho_ten.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             mat_khau.AutoSize = true;
             mat_khau.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            mat_khau.Location = new Point(158, 189);
+            mat_khau.Location = new Point(60, 196);
             mat_khau.Name = "mat_khau";
             mat_khau.Size = new Size(75, 20);
             mat_khau.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             xac_nhan_mat_khau.AutoSize = true;
             xac_nhan_mat_khau.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            xac_nhan_mat_khau.Location = new Point(158, 233);
+            xac_nhan_mat_khau.Location = new Point(60, 240);
             xac_nhan_mat_khau.Name = "xac_nhan_mat_khau";
             xac_nhan_mat_khau.Size = new Size(143, 20);
             xac_nhan_mat_khau.TabIndex = 4;
@@ -98,39 +98,43 @@
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(315, 100);
+            txtSDT.BorderStyle = BorderStyle.FixedSingle;
+            txtSDT.Location = new Point(250, 100);
             txtSDT.Name = "txtSDT";
-            txtSDT.Size = new Size(305, 27);
+            txtSDT.Size = new Size(250, 27);
             txtSDT.TabIndex = 5;
             // 
             // txtHoTen
             // 
-            txtHoTen.Location = new Point(315, 144);
+            txtHoTen.BorderStyle = BorderStyle.FixedSingle;
+            txtHoTen.Location = new Point(250, 144);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(305, 27);
+            txtHoTen.Size = new Size(250, 27);
             txtHoTen.TabIndex = 6;
             // 
             // txtMatKhau
             // 
-            txtMatKhau.Location = new Point(315, 189);
+            txtMatKhau.BorderStyle = BorderStyle.FixedSingle;
+            txtMatKhau.Location = new Point(250, 189);
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.PasswordChar = '*';
-            txtMatKhau.Size = new Size(305, 27);
+            txtMatKhau.Size = new Size(250, 27);
             txtMatKhau.TabIndex = 7;
             // 
             // txtXacNhan
             // 
-            txtXacNhan.Location = new Point(315, 233);
+            txtXacNhan.BorderStyle = BorderStyle.FixedSingle;
+            txtXacNhan.Location = new Point(250, 233);
             txtXacNhan.Name = "txtXacNhan";
             txtXacNhan.PasswordChar = '*';
-            txtXacNhan.Size = new Size(305, 27);
+            txtXacNhan.Size = new Size(250, 27);
             txtXacNhan.TabIndex = 8;
             // 
             // btndangky
             // 
-            btndangky.Location = new Point(86, 380);
+            btndangky.Location = new Point(285, 344);
             btndangky.Name = "btndangky";
-            btndangky.Size = new Size(119, 58);
+            btndangky.Size = new Size(119, 45);
             btndangky.TabIndex = 9;
             btndangky.Text = "Đăng ký";
             btndangky.UseVisualStyleBackColor = true;
@@ -138,9 +142,9 @@
             // 
             // huy
             // 
-            huy.Location = new Point(331, 380);
+            huy.Location = new Point(56, 344);
             huy.Name = "huy";
-            huy.Size = new Size(119, 58);
+            huy.Size = new Size(119, 45);
             huy.TabIndex = 10;
             huy.Text = "Hủy";
             huy.UseVisualStyleBackColor = true;
@@ -148,9 +152,9 @@
             // 
             // txtthoat
             // 
-            txtthoat.Location = new Point(589, 380);
+            txtthoat.Location = new Point(410, 344);
             txtthoat.Name = "txtthoat";
-            txtthoat.Size = new Size(119, 58);
+            txtthoat.Size = new Size(119, 45);
             txtthoat.TabIndex = 11;
             txtthoat.Text = "Thoát";
             txtthoat.UseVisualStyleBackColor = true;
@@ -160,7 +164,7 @@
             // 
             co_tk_chua.AutoSize = true;
             co_tk_chua.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            co_tk_chua.Location = new Point(250, 326);
+            co_tk_chua.Location = new Point(140, 418);
             co_tk_chua.Name = "co_tk_chua";
             co_tk_chua.Size = new Size(139, 23);
             co_tk_chua.TabIndex = 12;
@@ -170,8 +174,8 @@
             // 
             dang_nhap_ngay.AutoSize = true;
             dang_nhap_ngay.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dang_nhap_ngay.LinkColor = Color.FromArgb(64, 0, 0);
-            dang_nhap_ngay.Location = new Point(395, 326);
+            dang_nhap_ngay.LinkColor = Color.Black;
+            dang_nhap_ngay.Location = new Point(285, 418);
             dang_nhap_ngay.Name = "dang_nhap_ngay";
             dang_nhap_ngay.Size = new Size(152, 23);
             dang_nhap_ngay.TabIndex = 13;
@@ -183,7 +187,7 @@
             // 
             email.AutoSize = true;
             email.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            email.Location = new Point(159, 289);
+            email.Location = new Point(60, 289);
             email.Name = "email";
             email.Size = new Size(47, 20);
             email.TabIndex = 14;
@@ -191,16 +195,17 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(315, 282);
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtEmail.Location = new Point(250, 282);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(305, 27);
+            txtEmail.Size = new Size(250, 27);
             txtEmail.TabIndex = 15;
             // 
             // dang_ky
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(570, 472);
             Controls.Add(txtEmail);
             Controls.Add(email);
             Controls.Add(dang_nhap_ngay);

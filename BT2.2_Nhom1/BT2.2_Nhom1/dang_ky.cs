@@ -16,7 +16,7 @@ namespace BT2._2_Nhom1
             InitializeComponent();
         }
 
-        private void btndangky_Click(object sender, EventArgs e)
+        private async void btndangky_Click(object sender, EventArgs e)
         {
             btndangky.Enabled = false;
 
@@ -154,6 +154,7 @@ namespace BT2._2_Nhom1
                 txtEmail.Focus();
                 return;
             }
+
             var (salt, password) = MatKhau.Tao(matKhau);
             var user = new User()
             {
