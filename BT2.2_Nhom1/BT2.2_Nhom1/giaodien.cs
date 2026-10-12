@@ -48,7 +48,7 @@ namespace BT2._2_Nhom1
                 {
                     // Gán dữ liệu vào các Label tương ứng trên form chính
                     lblXinChao.Text = "Xin chào, " + user.HoTen;
-                    lblTenDangNhap.Text = "Tên đăng nhập: " + user.TenDangNhap;
+                    lblTenDangNhap.Text = "SĐT đăng nhập: " + user.TenDangNhap;
                     lblEmail.Text = "Email: " + user.Email;
                     lblLanDangNhap.Text = "Lần đăng nhập gần nhất: " + (string.IsNullOrEmpty(user.LanDangNhapCuoi) ? "Chưa có" : user.LanDangNhapCuoi);
                 }
