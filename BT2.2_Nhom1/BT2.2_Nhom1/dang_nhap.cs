@@ -51,7 +51,7 @@ namespace BT2._2_Nhom1
             {
                 if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
-                    lb_loimatkhau.Text = "";
+                    lblLoiMatKhau.Text = "";
                     await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     giaodien frm = new giaodien();
@@ -60,12 +60,12 @@ namespace BT2._2_Nhom1
                 }
                 else
                 {
-                    lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
+                    lblLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
                 }
             }
             else
             {
-                lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
+                lblLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
             }
             btnDangNhap.Enabled = true;
         }
@@ -88,17 +88,17 @@ namespace BT2._2_Nhom1
 
             if (string.IsNullOrEmpty(sdt))
             {
-                lbLoiDangNhap.Text = "Không được để trống SĐT!";
+                lblLoiDangNhap.Text = "Không được để trống SĐT!";
                 hopLeSDT = false;
             }
             else if (sdt.Length != 10 || !sdt.StartsWith("0"))
             {
-                lbLoiDangNhap.Text = "SĐT phải gồm 10 số, bắt đầu bằng 0!";
+                lblLoiDangNhap.Text = "SĐT phải gồm 10 số, bắt đầu bằng 0!";
                 hopLeSDT = false;
             }
             else
             {
-                lbLoiDangNhap.Text = "";
+                lblLoiDangNhap.Text = "";
                 hopLeSDT = true;
             }
         }
@@ -107,12 +107,12 @@ namespace BT2._2_Nhom1
         {
             if (string.IsNullOrEmpty(txtPassword.Text))
             {
-                lbLoiMatKhau.Text = "Không được để trống mật khẩu!";
+                lblLoiMatKhau.Text = "Không được để trống mật khẩu!";
                 hopLeMK = false;
             }
             else
             {
-                lbLoiMatKhau.Text = "";
+                lblLoiMatKhau.Text = "";
                 hopLeMK = true;
             }
         }
