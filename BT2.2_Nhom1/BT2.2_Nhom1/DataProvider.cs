@@ -100,5 +100,26 @@ namespace BT2._2_Nhom1
             await command.ExecuteNonQueryAsync();
             CloseConnection();
         }
+<<<<<<< HEAD
+=======
+
+        public static async Task<bool> IsUserExist(string username)
+        {
+            OpenConnection();
+            string query = "SELECT UserId FROM Users WHERE TenDangNhap = @TenDangNhap";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TenDangNhap", username);
+            using var reader = await command.ExecuteReaderAsync();
+
+            if (reader.Read())
+            {
+                CloseConnection();
+                return true;
+            }
+
+            CloseConnection();
+            return false;
+        }
+>>>>>>> a853c6f88a390a211b9e082aa96dae8d9a862d29
     }
 }

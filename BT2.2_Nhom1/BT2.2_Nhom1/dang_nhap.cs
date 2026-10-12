@@ -17,7 +17,7 @@ namespace BT2._2_Nhom1
             InitializeComponent();
         }
 
-        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -25,7 +25,7 @@ namespace BT2._2_Nhom1
             }
         }
 
-        private void btn_thoat_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             DialogResult cauHoi = MessageBox.Show("Bạn có chắc chắn muốn thoát ứng dụng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -36,23 +36,27 @@ namespace BT2._2_Nhom1
         }
 
 
-        private async void btn_dang_nhap_Click(object sender, EventArgs e)
+        private async void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string sdt = txt_SDT.Text;
-            string matkhau = txt_password.Text;
+            string sdt = txtSDT.Text;
+            string matkhau = txtPassword.Text;
 
             if (!hopLeMK || !hopLeSDT)
             {
                 return;
             }
 
-            btn_dang_nhap.Enabled = false;
+            btnDangNhap.Enabled = false;
             var user = await DataProvider.GetUserPasswordAndSalt(sdt);
 
             if (user.UserId != -1)
             {
                 if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
                 {
+<<<<<<< HEAD
+=======
+                    lb_loimatkhau.Text = "";
+>>>>>>> a853c6f88a390a211b9e082aa96dae8d9a862d29
                     await DataProvider.UpdateLoginDate(sdt);
                     MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     giaodien frm = new giaodien(sdt);
@@ -61,13 +65,14 @@ namespace BT2._2_Nhom1
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
                 }
-            } else
-            {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            btn_dang_nhap.Enabled = true;
+            else
+            {
+                lb_loimatkhau.Text = "SĐT hoặc mật khẩu không đúng";
+            }
+            btnDangNhap.Enabled = true;
         }
 
         private void llb_dangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -82,37 +87,37 @@ namespace BT2._2_Nhom1
 
         }
 
-        private void txt_SDT_Leave(object sender, EventArgs e)
+        private void txtSDT_Leave(object sender, EventArgs e)
         {
-            string sdt = txt_SDT.Text.Trim();
+            string sdt = txtSDT.Text.Trim();
 
             if (string.IsNullOrEmpty(sdt))
             {
-                lb_loidangnhap.Text = "Không được để trống SĐT!";
+                lbLoiDangNhap.Text = "Không được để trống SĐT!";
                 hopLeSDT = false;
             }
             else if (sdt.Length != 10 || !sdt.StartsWith("0"))
             {
-                lb_loidangnhap.Text = "SĐT phải gồm 10 số, bắt đầu bằng 0!";
+                lbLoiDangNhap.Text = "SĐT phải gồm 10 số, bắt đầu bằng 0!";
                 hopLeSDT = false;
             }
             else
             {
-                lb_loidangnhap.Text = "";
+                lbLoiDangNhap.Text = "";
                 hopLeSDT = true;
             }
         }
 
-        private void txt_password_Leave(object sender, EventArgs e)
+        private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_password.Text))
+            if (string.IsNullOrEmpty(txtPassword.Text))
             {
-                lb_loimatkhau.Text = "Không được để trống mật khẩu!";
+                lbLoiMatKhau.Text = "Không được để trống mật khẩu!";
                 hopLeMK = false;
             }
             else
             {
-                lb_loimatkhau.Text = "";
+                lbLoiMatKhau.Text = "";
                 hopLeMK = true;
             }
         }
