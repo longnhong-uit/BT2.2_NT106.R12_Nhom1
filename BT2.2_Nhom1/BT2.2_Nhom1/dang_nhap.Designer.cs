@@ -28,188 +28,180 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lb_dang_nhap = new Label();
-            lb_SDT = new Label();
-            lb_password = new Label();
-            txt_SDT = new TextBox();
-            txt_password = new TextBox();
-            btn_dang_nhap = new Button();
-            btn_thoat = new Button();
-            llb_quen_mk = new LinkLabel();
-            lb_ques = new Label();
-            llb_dangky = new LinkLabel();
-            lb_loidangnhap = new Label();
-            lb_loimatkhau = new Label();
+            lbDangNhap = new Label();
+            lbSDT = new Label();
+            lbPassword = new Label();
+            txtSDT = new TextBox();
+            txtPassword = new TextBox();
+            btnDangNhap = new Button();
+            btnThoat = new Button();
+            llbQuenMk = new LinkLabel();
+            lbQues = new Label();
+            llbDangKy = new LinkLabel();
+            lbLoiDangNhap = new Label();
+            lbLoiMatKhau = new Label();
             SuspendLayout();
             // 
-            // lb_dang_nhap
+            // lbDangNhap
             // 
-            lb_dang_nhap.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            lb_dang_nhap.Location = new Point(60, 33);
-            lb_dang_nhap.Name = "lb_dang_nhap";
-            lb_dang_nhap.Size = new Size(182, 45);
-            lb_dang_nhap.TabIndex = 0;
-            lb_dang_nhap.Text = "Đăng Nhập";
+            lbDangNhap.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbDangNhap.Location = new Point(55, 21);
+            lbDangNhap.Name = "lbDangNhap";
+            lbDangNhap.Size = new Size(337, 65);
+            lbDangNhap.TabIndex = 0;
+            lbDangNhap.Text = "ĐĂNG NHẬP";
             // 
-            // lb_SDT
+            // lbSDT
             // 
-            lb_SDT.AutoSize = true;
-            lb_SDT.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_SDT.Location = new Point(60, 121);
-            lb_SDT.Name = "lb_SDT";
-            lb_SDT.Size = new Size(117, 20);
-            lb_SDT.TabIndex = 1;
-            lb_SDT.Text = "SĐT Đăng nhập";
+            lbSDT.AutoSize = true;
+            lbSDT.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbSDT.Location = new Point(187, 127);
+            lbSDT.Name = "lbSDT";
+            lbSDT.Size = new Size(117, 20);
+            lbSDT.TabIndex = 1;
+            lbSDT.Text = "SĐT Đăng nhập";
             // 
-            // lb_password
+            // lbPassword
             // 
-            lb_password.AutoSize = true;
-            lb_password.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_password.Location = new Point(60, 186);
-            lb_password.Name = "lb_password";
-            lb_password.Size = new Size(75, 20);
-            lb_password.TabIndex = 2;
-            lb_password.Text = "Mật khẩu";
+            lbPassword.AutoSize = true;
+            lbPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbPassword.Location = new Point(187, 194);
+            lbPassword.Name = "lbPassword";
+            lbPassword.Size = new Size(75, 20);
+            lbPassword.TabIndex = 2;
+            lbPassword.Text = "Mật khẩu";
             // 
-            // txt_SDT
+            // txtSDT
             // 
-            txt_SDT.BorderStyle = BorderStyle.FixedSingle;
-            txt_SDT.ForeColor = SystemColors.WindowText;
-            txt_SDT.Location = new Point(241, 115);
-            txt_SDT.Multiline = true;
-            txt_SDT.Name = "txt_SDT";
-            txt_SDT.Size = new Size(263, 40);
-            txt_SDT.TabIndex = 3;
-            txt_SDT.KeyPress += txt_SDT_KeyPress;
-            txt_SDT.Leave += txt_SDT_Leave;
+            txtSDT.Location = new Point(323, 124);
+            txtSDT.Multiline = true;
+            txtSDT.Name = "txtSDT";
+            txtSDT.Size = new Size(263, 40);
+            txtSDT.TabIndex = 3;
+            txtSDT.KeyPress += txtSDT_KeyPress;
             // 
-            // txt_password
+            // txtPassword
             // 
-            txt_password.BorderStyle = BorderStyle.FixedSingle;
-            txt_password.Location = new Point(241, 180);
-            txt_password.Multiline = true;
-            txt_password.Name = "txt_password";
-            txt_password.PasswordChar = '*';
-            txt_password.Size = new Size(263, 37);
-            txt_password.TabIndex = 4;
-            txt_password.Leave += txt_password_Leave;
+            txtPassword.Location = new Point(323, 194);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(263, 37);
+            txtPassword.TabIndex = 4;
             // 
-            // btn_dang_nhap
+            // btnDangNhap
             // 
-            btn_dang_nhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_dang_nhap.Location = new Point(145, 306);
-            btn_dang_nhap.Name = "btn_dang_nhap";
-            btn_dang_nhap.Size = new Size(159, 50);
-            btn_dang_nhap.TabIndex = 5;
-            btn_dang_nhap.Text = "ĐĂNG NHẬP";
-            btn_dang_nhap.UseVisualStyleBackColor = true;
-            btn_dang_nhap.Click += btn_dang_nhap_Click;
+            btnDangNhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDangNhap.Location = new Point(187, 301);
+            btnDangNhap.Name = "btnDangNhap";
+            btnDangNhap.Size = new Size(159, 50);
+            btnDangNhap.TabIndex = 5;
+            btnDangNhap.Text = "ĐĂNG NHẬP";
+            btnDangNhap.UseVisualStyleBackColor = true;
+            btnDangNhap.Click += btnDangNhap_Click;
             // 
-            // btn_thoat
+            // btnThoat
             // 
-            btn_thoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_thoat.Location = new Point(325, 306);
-            btn_thoat.Name = "btn_thoat";
-            btn_thoat.Size = new Size(159, 50);
-            btn_thoat.TabIndex = 6;
-            btn_thoat.Text = "THOÁT";
-            btn_thoat.UseVisualStyleBackColor = true;
-            btn_thoat.Click += btn_thoat_Click;
+            btnThoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnThoat.Location = new Point(410, 301);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(159, 50);
+            btnThoat.TabIndex = 6;
+            btnThoat.Text = "THOÁT";
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
             // 
-            // llb_quen_mk
+            // llbQuenMk
             // 
-            llb_quen_mk.AutoSize = true;
-            llb_quen_mk.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            llb_quen_mk.LinkColor = Color.Black;
-            llb_quen_mk.Location = new Point(432, 265);
-            llb_quen_mk.Name = "llb_quen_mk";
-            llb_quen_mk.Size = new Size(123, 20);
-            llb_quen_mk.TabIndex = 7;
-            llb_quen_mk.TabStop = true;
-            llb_quen_mk.Text = "Quên mật khẩu?";
-            llb_quen_mk.LinkClicked += llb_quen_mk_LinkClicked;
+            llbQuenMk.AutoSize = true;
+            llbQuenMk.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            llbQuenMk.Location = new Point(538, 267);
+            llbQuenMk.Name = "llbQuenMk";
+            llbQuenMk.Size = new Size(123, 20);
+            llbQuenMk.TabIndex = 7;
+            llbQuenMk.TabStop = true;
+            llbQuenMk.Text = "Quên mật khẩu?";
+            llbQuenMk.LinkClicked += llb_quen_mk_LinkClicked;
             // 
-            // lb_ques
+            // lbQues
             // 
-            lb_ques.AutoSize = true;
-            lb_ques.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lb_ques.Location = new Point(200, 395);
-            lb_ques.Name = "lb_ques";
-            lb_ques.Size = new Size(146, 20);
-            lb_ques.TabIndex = 8;
-            lb_ques.Text = "Chưa có tài khoản?";
+            lbQues.AutoSize = true;
+            lbQues.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbQues.Location = new Point(246, 390);
+            lbQues.Name = "lbQues";
+            lbQues.Size = new Size(146, 20);
+            lbQues.TabIndex = 8;
+            lbQues.Text = "Chưa có tài khoản?";
             // 
-            // llb_dangky
+            // llbDangKy
             // 
-            llb_dangky.AutoSize = true;
-            llb_dangky.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            llb_dangky.LinkColor = Color.Black;
-            llb_dangky.Location = new Point(352, 395);
-            llb_dangky.Name = "llb_dangky";
-            llb_dangky.Size = new Size(106, 20);
-            llb_dangky.TabIndex = 9;
-            llb_dangky.TabStop = true;
-            llb_dangky.Text = "Đăng ký ngay";
-            llb_dangky.LinkClicked += llb_dangky_LinkClicked;
+            llbDangKy.AutoSize = true;
+            llbDangKy.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            llbDangKy.Location = new Point(398, 390);
+            llbDangKy.Name = "llbDangKy";
+            llbDangKy.Size = new Size(106, 20);
+            llbDangKy.TabIndex = 9;
+            llbDangKy.TabStop = true;
+            llbDangKy.Text = "Đăng ký ngay";
+            llbDangKy.LinkClicked += llb_dangky_LinkClicked;
             // 
-            // lb_loidangnhap
+            // lbLoiDangNhap
             // 
-            lb_loidangnhap.AutoSize = true;
-            lb_loidangnhap.Font = new Font("Segoe UI", 6F);
-            lb_loidangnhap.ForeColor = Color.Crimson;
-            lb_loidangnhap.Location = new Point(242, 161);
-            lb_loidangnhap.Name = "lb_loidangnhap";
-            lb_loidangnhap.Size = new Size(0, 12);
-            lb_loidangnhap.TabIndex = 10;
+            lbLoiDangNhap.AutoSize = true;
+            lbLoiDangNhap.ForeColor = Color.Crimson;
+            lbLoiDangNhap.Location = new Point(323, 167);
+            lbLoiDangNhap.Name = "lbLoiDangNhap";
+            lbLoiDangNhap.Size = new Size(0, 20);
+            lbLoiDangNhap.TabIndex = 10;
+            lbLoiDangNhap.Leave += txtSDT_Leave;
             // 
-            // lb_loimatkhau
+            // lbLoiMatKhau
             // 
-            lb_loimatkhau.AutoSize = true;
-            lb_loimatkhau.Font = new Font("Segoe UI", 6F);
-            lb_loimatkhau.ForeColor = Color.Crimson;
-            lb_loimatkhau.Location = new Point(242, 223);
-            lb_loimatkhau.Name = "lb_loimatkhau";
-            lb_loimatkhau.Size = new Size(0, 12);
-            lb_loimatkhau.TabIndex = 11;
+            lbLoiMatKhau.AutoSize = true;
+            lbLoiMatKhau.ForeColor = Color.Crimson;
+            lbLoiMatKhau.Location = new Point(323, 234);
+            lbLoiMatKhau.Name = "lbLoiMatKhau";
+            lbLoiMatKhau.Size = new Size(0, 20);
+            lbLoiMatKhau.TabIndex = 11;
+            lbLoiMatKhau.Leave += txtPassword_Leave;
             // 
             // dang_nhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(614, 450);
-            Controls.Add(lb_loimatkhau);
-            Controls.Add(lb_loidangnhap);
-            Controls.Add(llb_dangky);
-            Controls.Add(lb_ques);
-            Controls.Add(llb_quen_mk);
-            Controls.Add(btn_thoat);
-            Controls.Add(btn_dang_nhap);
-            Controls.Add(txt_password);
-            Controls.Add(txt_SDT);
-            Controls.Add(lb_password);
-            Controls.Add(lb_SDT);
-            Controls.Add(lb_dang_nhap);
-            ForeColor = SystemColors.WindowText;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lbLoiMatKhau);
+            Controls.Add(lbLoiDangNhap);
+            Controls.Add(llbDangKy);
+            Controls.Add(lbQues);
+            Controls.Add(llbQuenMk);
+            Controls.Add(btnThoat);
+            Controls.Add(btnDangNhap);
+            Controls.Add(txtPassword);
+            Controls.Add(txtSDT);
+            Controls.Add(lbPassword);
+            Controls.Add(lbSDT);
+            Controls.Add(lbDangNhap);
             Name = "dang_nhap";
             Text = "Form1";
+            Leave += txtPassword_Leave;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lb_dang_nhap;
-        private Label lb_SDT;
-        private Label lb_password;
-        private TextBox txt_SDT;
-        private TextBox txt_password;
-        private Button btn_dang_nhap;
-        private Button btn_thoat;
-        private LinkLabel llb_quen_mk;
-        private Label lb_ques;
-        private LinkLabel llb_dangky;
-        private Label lb_loidangnhap;
-        private Label lb_loimatkhau;
+        private Label lbDangNhap;
+        private Label lbSDT;
+        private Label lbPassword;
+        private TextBox txtSDT;
+        private TextBox txtPassword;
+        private Button btnDangNhap;
+        private Button btnThoat;
+        private LinkLabel llbQuenMk;
+        private Label lbQues;
+        private LinkLabel llbDangKy;
+        private Label lbLoiDangNhap;
+        private Label lbLoiMatKhau;
     }
 }
