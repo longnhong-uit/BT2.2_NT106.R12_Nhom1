@@ -9,8 +9,8 @@ namespace BT2._2_Nhom1
 {
     internal class DataProvider
     {
-        const string connString = "Data Source=.;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
-        //const string connString = "Data Source=localhost\\SQL2025DEV;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
+        //const string connString = "Data Source=.;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
+        const string connString = "Data Source=localhost\\SQL2025DEV;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
         private static SqlConnection connection;
 
         public static void OpenConnection()
@@ -99,6 +99,24 @@ namespace BT2._2_Nhom1
             command.Parameters.AddWithValue("@TenDangNhap", username);
             await command.ExecuteNonQueryAsync();
             CloseConnection();
+        }
+
+        public static async Task<bool> IsUserExist(string username)
+        {
+            OpenConnection();
+            string query = "SELECT UserId FROM Users WHERE TenDangNhap = @TenDangNhap";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@TenDangNhap", username);
+            using var reader = await command.ExecuteReaderAsync();
+
+            if (reader.Read())
+            {
+                CloseConnection();
+                return true;
+            }
+
+            CloseConnection();
+            return false;
         }
     }
 }

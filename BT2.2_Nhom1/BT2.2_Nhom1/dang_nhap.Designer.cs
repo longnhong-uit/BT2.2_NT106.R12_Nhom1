@@ -44,18 +44,18 @@
             // 
             // lb_dang_nhap
             // 
-            lb_dang_nhap.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_dang_nhap.Location = new Point(55, 21);
+            lb_dang_nhap.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lb_dang_nhap.Location = new Point(60, 33);
             lb_dang_nhap.Name = "lb_dang_nhap";
-            lb_dang_nhap.Size = new Size(337, 65);
+            lb_dang_nhap.Size = new Size(182, 45);
             lb_dang_nhap.TabIndex = 0;
-            lb_dang_nhap.Text = "ĐĂNG NHẬP";
+            lb_dang_nhap.Text = "Đăng Nhập";
             // 
             // lb_SDT
             // 
             lb_SDT.AutoSize = true;
             lb_SDT.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_SDT.Location = new Point(150, 144);
+            lb_SDT.Location = new Point(60, 121);
             lb_SDT.Name = "lb_SDT";
             lb_SDT.Size = new Size(117, 20);
             lb_SDT.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             lb_password.AutoSize = true;
             lb_password.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lb_password.Location = new Point(187, 194);
+            lb_password.Location = new Point(60, 186);
             lb_password.Name = "lb_password";
             lb_password.Size = new Size(75, 20);
             lb_password.TabIndex = 2;
@@ -73,7 +73,9 @@
             // 
             // txt_SDT
             // 
-            txt_SDT.Location = new Point(332, 141);
+            txt_SDT.BorderStyle = BorderStyle.FixedSingle;
+            txt_SDT.ForeColor = SystemColors.WindowText;
+            txt_SDT.Location = new Point(241, 115);
             txt_SDT.Multiline = true;
             txt_SDT.Name = "txt_SDT";
             txt_SDT.Size = new Size(263, 40);
@@ -83,7 +85,8 @@
             // 
             // txt_password
             // 
-            txt_password.Location = new Point(332, 194);
+            txt_password.BorderStyle = BorderStyle.FixedSingle;
+            txt_password.Location = new Point(241, 180);
             txt_password.Multiline = true;
             txt_password.Name = "txt_password";
             txt_password.PasswordChar = '*';
@@ -94,7 +97,7 @@
             // btn_dang_nhap
             // 
             btn_dang_nhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_dang_nhap.Location = new Point(187, 301);
+            btn_dang_nhap.Location = new Point(145, 306);
             btn_dang_nhap.Name = "btn_dang_nhap";
             btn_dang_nhap.Size = new Size(159, 50);
             btn_dang_nhap.TabIndex = 5;
@@ -105,7 +108,7 @@
             // btn_thoat
             // 
             btn_thoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_thoat.Location = new Point(410, 301);
+            btn_thoat.Location = new Point(325, 306);
             btn_thoat.Name = "btn_thoat";
             btn_thoat.Size = new Size(159, 50);
             btn_thoat.TabIndex = 6;
@@ -117,7 +120,8 @@
             // 
             llb_quen_mk.AutoSize = true;
             llb_quen_mk.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            llb_quen_mk.Location = new Point(520, 244);
+            llb_quen_mk.LinkColor = Color.Black;
+            llb_quen_mk.Location = new Point(432, 265);
             llb_quen_mk.Name = "llb_quen_mk";
             llb_quen_mk.Size = new Size(123, 20);
             llb_quen_mk.TabIndex = 7;
@@ -129,7 +133,7 @@
             // 
             lb_ques.AutoSize = true;
             lb_ques.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lb_ques.Location = new Point(246, 390);
+            lb_ques.Location = new Point(200, 395);
             lb_ques.Name = "lb_ques";
             lb_ques.Size = new Size(146, 20);
             lb_ques.TabIndex = 8;
@@ -139,7 +143,8 @@
             // 
             llb_dangky.AutoSize = true;
             llb_dangky.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            llb_dangky.Location = new Point(398, 390);
+            llb_dangky.LinkColor = Color.Black;
+            llb_dangky.Location = new Point(352, 395);
             llb_dangky.Name = "llb_dangky";
             llb_dangky.Size = new Size(106, 20);
             llb_dangky.TabIndex = 9;
@@ -150,26 +155,29 @@
             // lb_loidangnhap
             // 
             lb_loidangnhap.AutoSize = true;
+            lb_loidangnhap.Font = new Font("Segoe UI", 6F);
             lb_loidangnhap.ForeColor = Color.Crimson;
-            lb_loidangnhap.Location = new Point(601, 161);
+            lb_loidangnhap.Location = new Point(242, 161);
             lb_loidangnhap.Name = "lb_loidangnhap";
-            lb_loidangnhap.Size = new Size(0, 20);
+            lb_loidangnhap.Size = new Size(0, 12);
             lb_loidangnhap.TabIndex = 10;
             // 
             // lb_loimatkhau
             // 
             lb_loimatkhau.AutoSize = true;
+            lb_loimatkhau.Font = new Font("Segoe UI", 6F);
             lb_loimatkhau.ForeColor = Color.Crimson;
-            lb_loimatkhau.Location = new Point(601, 211);
+            lb_loimatkhau.Location = new Point(242, 223);
             lb_loimatkhau.Name = "lb_loimatkhau";
-            lb_loimatkhau.Size = new Size(0, 20);
+            lb_loimatkhau.Size = new Size(0, 12);
             lb_loimatkhau.TabIndex = 11;
             // 
             // dang_nhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(614, 450);
             Controls.Add(lb_loimatkhau);
             Controls.Add(lb_loidangnhap);
             Controls.Add(llb_dangky);
@@ -182,6 +190,7 @@
             Controls.Add(lb_password);
             Controls.Add(lb_SDT);
             Controls.Add(lb_dang_nhap);
+            ForeColor = SystemColors.WindowText;
             Name = "dang_nhap";
             Text = "Form1";
             ResumeLayout(false);
