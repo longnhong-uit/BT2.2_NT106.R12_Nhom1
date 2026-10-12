@@ -33,7 +33,7 @@
             lblTenDangNhap = new Label();
             lblEmail = new Label();
             lblLanDangNhap = new Label();
-            btnDangxuat = new Button();
+            btnDangXuat = new Button();
             SuspendLayout();
             // 
             // lblTrangChinh
@@ -83,23 +83,23 @@
             lblLanDangNhap.TabIndex = 4;
             lblLanDangNhap.Text = "label5";
             // 
-            // btnDangxuat
+            // btnDangXuat
             // 
-            btnDangxuat.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            btnDangxuat.Location = new Point(494, 352);
-            btnDangxuat.Name = "btnDangxuat";
-            btnDangxuat.Size = new Size(185, 47);
-            btnDangxuat.TabIndex = 5;
-            btnDangxuat.Text = "Đăng xuất";
-            btnDangxuat.UseVisualStyleBackColor = true;
-            btnDangxuat.Click += btnDangXuat_Click;
+            btnDangXuat.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnDangXuat.Location = new Point(494, 352);
+            btnDangXuat.Name = "btnDangXuat";
+            btnDangXuat.Size = new Size(185, 47);
+            btnDangXuat.TabIndex = 5;
+            btnDangXuat.Text = "Đăng xuất";
+            btnDangXuat.UseVisualStyleBackColor = true;
+            btnDangXuat.Click += btnDangXuat_Click;
             // 
             // giaodien
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnDangxuat);
+            Controls.Add(btnDangXuat);
             Controls.Add(lblLanDangNhap);
             Controls.Add(lblEmail);
             Controls.Add(lblTenDangNhap);
@@ -119,6 +119,6 @@
         private Label lblTenDangNhap;
         private Label lblEmail;
         private Label lblLanDangNhap;
-        private Button btnDangxuat;
+        private Button btnDangXuat;
     }
 }
