@@ -18,7 +18,7 @@ namespace BT2._2_Nhom1
 
         private async void btnDangky_Click(object sender, EventArgs e)
         {
-            btnDangky.Enabled = false;
+            btnDangKy.Enabled = false;
 
             lblBaoLoiSDT.Text = "";
             lblBaoLoiHoTen.Text = "";
@@ -37,7 +37,7 @@ namespace BT2._2_Nhom1
             if (string.IsNullOrEmpty(sdt))
             {
                 lblBaoLoiSDT.Text = "Vui lòng nhập số điện thoại đăng nhập!"; txtSDT.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -45,7 +45,7 @@ namespace BT2._2_Nhom1
             if (!Regex.IsMatch(sdt, @"^0\d{9}$"))
             {
                 lblBaoLoiSDT.Text = "Số điện thoại không hợp lệ (Phải có 10 số và bắt đầu bằng số 0)"; txtSDT.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -54,7 +54,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiHoTen.Text = "Vui lòng nhập họ và tên!";
                 txtHoTen.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -63,7 +63,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiHoTen.Text = "Họ và tên phải từ 2 đến 50 ký tự!";
                 txtHoTen.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -72,7 +72,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiHoTen.Text = "Họ và tên không chứa số hay ký tự đặc biệt!";
                 txtHoTen.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -81,7 +81,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiPassword.Text = "Vui lòng nhập mật khẩu!";
                 txtMatKhau.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -90,7 +90,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiPassword.Text = "Mật khẩu phải có tối thiểu 8 ký tự!";
                 txtMatKhau.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -99,7 +99,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiPassword.Text = "Mật khẩu phải không có khoảng trắng";
                 txtMatKhau.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -113,7 +113,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiPassword.Text = "Mật khẩu yếu! Phải chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 chữ số và 1 ký tự đặc biệt.";
                 txtMatKhau.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -123,7 +123,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiXacNhanPassword.Text = "Vui lòng nhập xác nhận mật khẩu!";
                 txtXacNhan.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
 
@@ -132,7 +132,7 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiXacNhanPassword.Text = "Xác nhận mật khẩu không trùng khớp!";
                 txtXacNhan.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
             // 5. Email
@@ -140,25 +140,38 @@ namespace BT2._2_Nhom1
             {
                 lblBaoLoiEmail.Text = "Vui lòng nhập Email, không được để trống!";
                 txtEmail.Focus();
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 return;
             }
             if (!email.ToLower().EndsWith("@gmail.com"))
             {
                 lblBaoLoiEmail.Text = "Email phải đúng định dạng Gmail (ví dụ: abc@gmail.com)!";
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 txtEmail.Focus();
                 return;
             }
 
             var (salt, password) = MatKhau.Tao(matKhau);
-            
+
+            btnDangKy.Text = "Đang xử lý ...";
+            btnDangKy.Enabled = false;
+            if (await DataProvider.TestConnection())
+            {
+                btnDangKy.Enabled = true;
+                btnDangKy.Text = "Đăng Ký";
+            }
+            else
+            {
+                btnDangKy.Enabled = true;
+                btnDangKy.Text = "Đăng Ký";
+                return;
+            }
             // Kiểm tra xem số điện thoại đã được đăng ký chưa
             bool daTonTai = await DataProvider.IsUserExist(sdt);
             if (daTonTai)
             {
                 lblBaoLoiSDT.Text = "Số điện thoại này đã được đăng ký!";
-                btnDangky.Enabled = true;
+                btnDangKy.Enabled = true;
                 txtSDT.Focus();
                 return;
             }
@@ -175,11 +188,12 @@ namespace BT2._2_Nhom1
 
             // Xong
             MessageBox.Show("Đăng ký tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnDangky.Enabled = true;
+            btnDangKy.Enabled = true;
 
             dang_nhap DangNhap = new dang_nhap();
             DangNhap.Show();
             this.Hide();
+            btnDangKy.Enabled = true;
         }
 
 
@@ -208,6 +222,5 @@ namespace BT2._2_Nhom1
             DangNhap.Show();
             this.Hide();
         }
-
     }
 }

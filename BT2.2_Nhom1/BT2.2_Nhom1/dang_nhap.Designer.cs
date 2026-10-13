@@ -40,22 +40,27 @@
             llbDangKy = new LinkLabel();
             lblLoiMatKhau = new Label();
             lblLoiDangNhap = new Label();
+            pnlLeft = new Panel();
+            pnlDown = new Panel();
+            pnlRight = new Panel();
+            pnlUp = new Panel();
+            pnlUpBody = new Panel();
             SuspendLayout();
             // 
             // lblDangNhap
             // 
-            lblDangNhap.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDangNhap.Location = new Point(55, 21);
+            lblDangNhap.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblDangNhap.Location = new Point(53, 18);
             lblDangNhap.Name = "lblDangNhap";
-            lblDangNhap.Size = new Size(337, 65);
+            lblDangNhap.Size = new Size(161, 43);
             lblDangNhap.TabIndex = 0;
-            lblDangNhap.Text = "ĐĂNG NHẬP";
+            lblDangNhap.Text = "Đăng Nhập";
             // 
             // lblSDT
             // 
             lblSDT.AutoSize = true;
             lblSDT.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSDT.Location = new Point(187, 127);
+            lblSDT.Location = new Point(60, 107);
             lblSDT.Name = "lblSDT";
             lblSDT.Size = new Size(117, 20);
             lblSDT.TabIndex = 1;
@@ -65,7 +70,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(187, 194);
+            lblPassword.Location = new Point(60, 156);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(75, 20);
             lblPassword.TabIndex = 2;
@@ -73,43 +78,43 @@
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(323, 124);
+            txtSDT.BorderStyle = BorderStyle.FixedSingle;
+            txtSDT.Location = new Point(230, 100);
             txtSDT.Multiline = true;
             txtSDT.Name = "txtSDT";
-            txtSDT.Size = new Size(263, 40);
+            txtSDT.Size = new Size(250, 27);
             txtSDT.TabIndex = 3;
             txtSDT.KeyPress += txtSDT_KeyPress;
-            txtSDT.Leave += txtSDT_Leave;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(323, 194);
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Location = new Point(230, 149);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(263, 37);
+            txtPassword.Size = new Size(250, 27);
             txtPassword.TabIndex = 4;
-            txtPassword.Leave += txtPassword_Leave;
             // 
             // btnDangNhap
             // 
-            btnDangNhap.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDangNhap.Location = new Point(187, 301);
+            btnDangNhap.Font = new Font("Segoe UI", 9F);
+            btnDangNhap.Location = new Point(187, 252);
             btnDangNhap.Name = "btnDangNhap";
-            btnDangNhap.Size = new Size(159, 50);
+            btnDangNhap.Size = new Size(119, 45);
             btnDangNhap.TabIndex = 5;
-            btnDangNhap.Text = "ĐĂNG NHẬP";
+            btnDangNhap.Text = "Đăng Nhập";
             btnDangNhap.UseVisualStyleBackColor = true;
             btnDangNhap.Click += btnDangNhap_Click;
             // 
             // btnThoat
             // 
-            btnThoat.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnThoat.Location = new Point(410, 301);
+            btnThoat.Font = new Font("Segoe UI", 9F);
+            btnThoat.Location = new Point(323, 252);
             btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(159, 50);
+            btnThoat.Size = new Size(119, 45);
             btnThoat.TabIndex = 6;
-            btnThoat.Text = "THOÁT";
+            btnThoat.Text = "Thoát";
             btnThoat.UseVisualStyleBackColor = true;
             btnThoat.Click += btnThoat_Click;
             // 
@@ -117,7 +122,8 @@
             // 
             llbQuenMk.AutoSize = true;
             llbQuenMk.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            llbQuenMk.Location = new Point(538, 267);
+            llbQuenMk.LinkColor = SystemColors.WindowText;
+            llbQuenMk.Location = new Point(370, 214);
             llbQuenMk.Name = "llbQuenMk";
             llbQuenMk.Size = new Size(123, 20);
             llbQuenMk.TabIndex = 7;
@@ -128,8 +134,8 @@
             // lblQues
             // 
             lblQues.AutoSize = true;
-            lblQues.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblQues.Location = new Point(246, 390);
+            lblQues.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic);
+            lblQues.Location = new Point(143, 335);
             lblQues.Name = "lblQues";
             lblQues.Size = new Size(146, 20);
             lblQues.TabIndex = 8;
@@ -139,7 +145,8 @@
             // 
             llbDangKy.AutoSize = true;
             llbDangKy.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            llbDangKy.Location = new Point(398, 390);
+            llbDangKy.LinkColor = SystemColors.WindowText;
+            llbDangKy.Location = new Point(295, 335);
             llbDangKy.Name = "llbDangKy";
             llbDangKy.Size = new Size(106, 20);
             llbDangKy.TabIndex = 9;
@@ -151,7 +158,7 @@
             // 
             lblLoiMatKhau.AutoSize = true;
             lblLoiMatKhau.ForeColor = Color.Crimson;
-            lblLoiMatKhau.Location = new Point(323, 234);
+            lblLoiMatKhau.Location = new Point(230, 179);
             lblLoiMatKhau.Name = "lblLoiMatKhau";
             lblLoiMatKhau.Size = new Size(0, 20);
             lblLoiMatKhau.TabIndex = 11;
@@ -159,17 +166,70 @@
             // lblLoiDangNhap
             // 
             lblLoiDangNhap.AutoSize = true;
+            lblLoiDangNhap.Font = new Font("Segoe UI", 8F);
             lblLoiDangNhap.ForeColor = Color.Crimson;
-            lblLoiDangNhap.Location = new Point(323, 167);
+            lblLoiDangNhap.Location = new Point(230, 129);
             lblLoiDangNhap.Name = "lblLoiDangNhap";
-            lblLoiDangNhap.Size = new Size(0, 20);
+            lblLoiDangNhap.Size = new Size(0, 19);
             lblLoiDangNhap.TabIndex = 10;
+            // 
+            // pnlLeft
+            // 
+            pnlLeft.BackColor = Color.FromArgb(0, 192, 0);
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.Location = new Point(0, 0);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(3, 393);
+            pnlLeft.TabIndex = 12;
+            // 
+            // pnlDown
+            // 
+            pnlDown.BackColor = Color.FromArgb(0, 192, 0);
+            pnlDown.Dock = DockStyle.Bottom;
+            pnlDown.Location = new Point(3, 390);
+            pnlDown.Name = "pnlDown";
+            pnlDown.Size = new Size(547, 3);
+            pnlDown.TabIndex = 13;
+            // 
+            // pnlRight
+            // 
+            pnlRight.BackColor = Color.FromArgb(0, 192, 0);
+            pnlRight.Dock = DockStyle.Right;
+            pnlRight.Location = new Point(547, 0);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Size = new Size(3, 390);
+            pnlRight.TabIndex = 14;
+            // 
+            // pnlUp
+            // 
+            pnlUp.BackColor = Color.FromArgb(0, 192, 0);
+            pnlUp.Dock = DockStyle.Top;
+            pnlUp.Location = new Point(3, 0);
+            pnlUp.Name = "pnlUp";
+            pnlUp.Size = new Size(544, 80);
+            pnlUp.TabIndex = 15;
+            // 
+            // pnlUpBody
+            // 
+            pnlUpBody.BackColor = Color.White;
+            pnlUpBody.Location = new Point(3, 3);
+            pnlUpBody.Name = "pnlUpBody";
+            pnlUpBody.Size = new Size(544, 74);
+            pnlUpBody.TabIndex = 0;
             // 
             // dang_nhap
             // 
+            AcceptButton = btnDangNhap;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(550, 393);
+            Controls.Add(lblDangNhap);
+            Controls.Add(pnlUpBody);
+            Controls.Add(pnlUp);
+            Controls.Add(pnlRight);
+            Controls.Add(pnlDown);
+            Controls.Add(pnlLeft);
             Controls.Add(lblLoiMatKhau);
             Controls.Add(lblLoiDangNhap);
             Controls.Add(llbDangKy);
@@ -181,10 +241,10 @@
             Controls.Add(txtSDT);
             Controls.Add(lblPassword);
             Controls.Add(lblSDT);
-            Controls.Add(lblDangNhap);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "dang_nhap";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Leave += txtPassword_Leave;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,5 +263,10 @@
         private LinkLabel llbDangKy;
         private Label lblLoiMatKhau;
         private Label lblLoiDangNhap;
+        private Panel pnlLeft;
+        private Panel pnlDown;
+        private Panel pnlRight;
+        private Panel pnlUp;
+        private Panel pnlUpBody;
     }
 }

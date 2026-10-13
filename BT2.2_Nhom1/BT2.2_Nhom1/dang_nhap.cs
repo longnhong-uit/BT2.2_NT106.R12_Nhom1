@@ -38,55 +38,8 @@ namespace BT2._2_Nhom1
 
         private async void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string sdt = txtSDT.Text;
-            string matkhau = txtPassword.Text;
-
-            if (!hopLeMK || !hopLeSDT)
-            {
-                return;
-            }
-
-            btnDangNhap.Enabled = false;
-            var user = await DataProvider.GetUserPasswordAndSalt(sdt);
-
-            if (user.UserId != -1)
-            {
-                if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
-                {
-                    lblLoiMatKhau.Text = "";
-                    await DataProvider.UpdateLoginDate(sdt);
-                    MessageBox.Show("Đăng nhập thành công!", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    giaodien frm = new giaodien(sdt);
-                    frm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    lblLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
-                }
-            }
-            else
-            {
-                lblLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
-            }
-            btnDangNhap.Enabled = true;
-        }
-
-        private void llb_dangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            dang_ky frm = new dang_ky();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void llb_quen_mk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void txtSDT_Leave(object sender, EventArgs e)
-        {
             string sdt = txtSDT.Text.Trim();
+            string matkhau = txtPassword.Text;
 
             if (string.IsNullOrEmpty(sdt))
             {
@@ -103,10 +56,7 @@ namespace BT2._2_Nhom1
                 lblLoiDangNhap.Text = "";
                 hopLeSDT = true;
             }
-        }
 
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
             if (string.IsNullOrEmpty(txtPassword.Text))
             {
                 lblLoiMatKhau.Text = "Không được để trống mật khẩu!";
@@ -117,6 +67,63 @@ namespace BT2._2_Nhom1
                 lblLoiMatKhau.Text = "";
                 hopLeMK = true;
             }
+
+            if (!hopLeMK || !hopLeSDT)
+            {
+                return;
+            }
+
+            btnDangNhap.Text = "Đang xử lý ...";
+            btnDangNhap.Enabled = false;
+            if (await DataProvider.TestConnection())
+            {
+                btnDangNhap.Enabled = true;
+                btnDangNhap.Text = "Đăng Nhập";
+            }
+            else
+            {
+                btnDangNhap.Enabled = true;
+                btnDangNhap.Text = "Đăng Nhập";
+                return;
+            }
+
+            btnDangNhap.Enabled = false;
+            var user = await DataProvider.GetUserPasswordAndSalt(sdt);
+
+            if (user.UserId != -1)
+            {
+                if (MatKhau.KiemTra(matkhau, user.Salt, user.MatKhauBam))
+                {
+                    lblLoiMatKhau.Text = "";
+                    await DataProvider.UpdateLoginDate(sdt);
+                    giaodien frm = new giaodien(sdt);
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    lblLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
+                    txtPassword.Text = "";
+                }
+            }
+            else
+            {
+                lblLoiMatKhau.Text = "SĐT hoặc mật khẩu không đúng";
+                txtPassword.Text = "";
+            }
+            btnDangNhap.Enabled = true;
+        }
+
+        private void llb_dangky_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dang_ky frm = new dang_ky();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void llb_quen_mk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
