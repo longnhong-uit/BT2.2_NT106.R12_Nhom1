@@ -30,14 +30,14 @@
         {
             lblDangKy = new Label();
             lblSDT = new Label();
-            lblHo_ten = new Label();
+            lblHoTen = new Label();
             lblPassword = new Label();
-            lblxac_nhan_Password = new Label();
+            lblXacNhanPassword = new Label();
             txtSDT = new TextBox();
             txtHoTen = new TextBox();
             txtMatKhau = new TextBox();
             txtXacNhan = new TextBox();
-            btnDangky = new Button();
+            btnDangKy = new Button();
             btnHuy = new Button();
             btnThoat = new Button();
             lblDaCoTaiKhoan = new Label();
@@ -49,13 +49,13 @@
             lblBaoLoiPassword = new Label();
             lblBaoLoiXacNhanPassword = new Label();
             lblBaoLoiEmail = new Label();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
+            pnlLeft = new Panel();
+            pnlDown = new Panel();
+            pnlRight = new Panel();
+            pnlUp = new Panel();
+            pnlUpBody = new Panel();
+            pnlUp.SuspendLayout();
+            pnlUpBody.SuspendLayout();
             SuspendLayout();
             // 
             // lblDangKy
@@ -79,15 +79,15 @@
             lblSDT.TabIndex = 1;
             lblSDT.Text = "SĐT đăng nhập";
             // 
-            // lblHo_ten
+            // lblHoTen
             // 
-            lblHo_ten.AutoSize = true;
-            lblHo_ten.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblHo_ten.Location = new Point(60, 156);
-            lblHo_ten.Name = "lblHo_ten";
-            lblHo_ten.Size = new Size(76, 20);
-            lblHo_ten.TabIndex = 2;
-            lblHo_ten.Text = "Họ và tên";
+            lblHoTen.AutoSize = true;
+            lblHoTen.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblHoTen.Location = new Point(60, 156);
+            lblHoTen.Name = "lblHoTen";
+            lblHoTen.Size = new Size(76, 20);
+            lblHoTen.TabIndex = 2;
+            lblHoTen.Text = "Họ và tên";
             // 
             // lblPassword
             // 
@@ -99,15 +99,15 @@
             lblPassword.TabIndex = 3;
             lblPassword.Text = "Mật khẩu";
             // 
-            // lblxac_nhan_Password
+            // lblXacNhanPassword
             // 
-            lblxac_nhan_Password.AutoSize = true;
-            lblxac_nhan_Password.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblxac_nhan_Password.Location = new Point(60, 254);
-            lblxac_nhan_Password.Name = "lblxac_nhan_Password";
-            lblxac_nhan_Password.Size = new Size(143, 20);
-            lblxac_nhan_Password.TabIndex = 4;
-            lblxac_nhan_Password.Text = "Xác nhận mật khẩu";
+            lblXacNhanPassword.AutoSize = true;
+            lblXacNhanPassword.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblXacNhanPassword.Location = new Point(60, 254);
+            lblXacNhanPassword.Name = "lblXacNhanPassword";
+            lblXacNhanPassword.Size = new Size(143, 20);
+            lblXacNhanPassword.TabIndex = 4;
+            lblXacNhanPassword.Text = "Xác nhận mật khẩu";
             // 
             // txtSDT
             // 
@@ -143,16 +143,16 @@
             txtXacNhan.Size = new Size(250, 27);
             txtXacNhan.TabIndex = 8;
             // 
-            // btnDangky
+            // btnDangKy
             // 
-            btnDangky.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            btnDangky.Location = new Point(285, 356);
-            btnDangky.Name = "btnDangky";
-            btnDangky.Size = new Size(119, 45);
-            btnDangky.TabIndex = 9;
-            btnDangky.Text = "Đăng ký";
-            btnDangky.UseVisualStyleBackColor = true;
-            btnDangky.Click += btnDangky_Click;
+            btnDangKy.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            btnDangKy.Location = new Point(285, 356);
+            btnDangKy.Name = "btnDangKy";
+            btnDangKy.Size = new Size(119, 45);
+            btnDangKy.TabIndex = 9;
+            btnDangKy.Text = "Đăng ký";
+            btnDangKy.UseVisualStyleBackColor = true;
+            btnDangKy.Click += btnDangky_Click;
             // 
             // btnHuy
             // 
@@ -238,11 +238,11 @@
             // lblBaoLoiPassword
             // 
             lblBaoLoiPassword.AutoSize = true;
-            lblBaoLoiPassword.Font = new Font("Microsoft Sans Serif", 7.8F);
+            lblBaoLoiPassword.Font = new Font("Microsoft Sans Serif", 5F);
             lblBaoLoiPassword.ForeColor = Color.Red;
             lblBaoLoiPassword.Location = new Point(253, 227);
             lblBaoLoiPassword.Name = "lblBaoLoiPassword";
-            lblBaoLoiPassword.Size = new Size(0, 16);
+            lblBaoLoiPassword.Size = new Size(0, 12);
             lblBaoLoiPassword.TabIndex = 18;
             // 
             // lblBaoLoiXacNhanPassword
@@ -265,61 +265,62 @@
             lblBaoLoiEmail.Size = new Size(0, 16);
             lblBaoLoiEmail.TabIndex = 20;
             // 
-            // panel1
+            // pnlLeft
             // 
-            panel1.BackColor = Color.FromArgb(0, 192, 0);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 80);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(3, 392);
-            panel1.TabIndex = 0;
+            pnlLeft.BackColor = Color.FromArgb(0, 192, 0);
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.Location = new Point(0, 80);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(3, 392);
+            pnlLeft.TabIndex = 0;
             // 
-            // panel2
+            // pnlDown
             // 
-            panel2.BackColor = Color.FromArgb(0, 192, 0);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(567, 80);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(3, 392);
-            panel2.TabIndex = 0;
+            pnlDown.BackColor = Color.FromArgb(0, 192, 0);
+            pnlDown.Dock = DockStyle.Right;
+            pnlDown.Location = new Point(631, 80);
+            pnlDown.Name = "pnlDown";
+            pnlDown.Size = new Size(3, 392);
+            pnlDown.TabIndex = 0;
             // 
-            // panel3
+            // pnlRight
             // 
-            panel3.BackColor = Color.FromArgb(0, 192, 0);
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(3, 469);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(564, 3);
-            panel3.TabIndex = 0;
+            pnlRight.BackColor = Color.FromArgb(0, 192, 0);
+            pnlRight.Dock = DockStyle.Bottom;
+            pnlRight.Location = new Point(3, 469);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Size = new Size(628, 3);
+            pnlRight.TabIndex = 0;
             // 
-            // panel4
+            // pnlUp
             // 
-            panel4.BackColor = Color.FromArgb(0, 192, 0);
-            panel4.Controls.Add(panel5);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(570, 80);
-            panel4.TabIndex = 0;
+            pnlUp.BackColor = Color.FromArgb(0, 192, 0);
+            pnlUp.Controls.Add(pnlUpBody);
+            pnlUp.Dock = DockStyle.Top;
+            pnlUp.Location = new Point(0, 0);
+            pnlUp.Name = "pnlUp";
+            pnlUp.Size = new Size(634, 80);
+            pnlUp.TabIndex = 0;
             // 
-            // panel5
+            // pnlUpBody
             // 
-            panel5.BackColor = Color.White;
-            panel5.Controls.Add(lblDangKy);
-            panel5.Location = new Point(3, 3);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(564, 74);
-            panel5.TabIndex = 21;
+            pnlUpBody.BackColor = Color.White;
+            pnlUpBody.Controls.Add(lblDangKy);
+            pnlUpBody.Location = new Point(3, 3);
+            pnlUpBody.Name = "pnlUpBody";
+            pnlUpBody.Size = new Size(628, 74);
+            pnlUpBody.TabIndex = 21;
             // 
             // dang_ky
             // 
+            AcceptButton = btnDangKy;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(570, 472);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            ClientSize = new Size(634, 472);
+            Controls.Add(pnlRight);
+            Controls.Add(pnlDown);
+            Controls.Add(pnlLeft);
             Controls.Add(lblBaoLoiEmail);
             Controls.Add(lblBaoLoiXacNhanPassword);
             Controls.Add(lblBaoLoiPassword);
@@ -331,23 +332,23 @@
             Controls.Add(lblDaCoTaiKhoan);
             Controls.Add(btnThoat);
             Controls.Add(btnHuy);
-            Controls.Add(btnDangky);
+            Controls.Add(btnDangKy);
             Controls.Add(txtXacNhan);
             Controls.Add(txtMatKhau);
             Controls.Add(txtHoTen);
             Controls.Add(txtSDT);
-            Controls.Add(lblxac_nhan_Password);
+            Controls.Add(lblXacNhanPassword);
             Controls.Add(lblPassword);
-            Controls.Add(lblHo_ten);
+            Controls.Add(lblHoTen);
             Controls.Add(lblSDT);
-            Controls.Add(panel4);
+            Controls.Add(pnlUp);
             FormBorderStyle = FormBorderStyle.None;
             Name = "dang_ky";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "dang_ky";
-            panel4.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            pnlUp.ResumeLayout(false);
+            pnlUpBody.ResumeLayout(false);
+            pnlUpBody.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -356,14 +357,14 @@
 
         private Label lblDangKy;
         private Label lblSDT;
-        private Label lblHo_ten;
+        private Label lblHoTen;
         private Label lblPassword;
-        private Label lblxac_nhan_Password;
+        private Label lblXacNhanPassword;
         private TextBox txtSDT;
         private TextBox txtHoTen;
         private TextBox txtMatKhau;
         private TextBox txtXacNhan;
-        private Button btnDangky;
+        private Button btnDangKy;
         private Button btnHuy;
         private Button btnThoat;
         private Label lblDaCoTaiKhoan;
@@ -375,10 +376,10 @@
         private Label lblBaoLoiPassword;
         private Label lblBaoLoiXacNhanPassword;
         private Label lblBaoLoiEmail;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
+        private Panel pnlLeft;
+        private Panel pnlDown;
+        private Panel pnlRight;
+        private Panel pnlUp;
+        private Panel pnlUpBody;
     }
 }

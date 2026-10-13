@@ -12,20 +12,26 @@ namespace BT2._2_Nhom1
         //const string connString = "Data Source=.;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
         const string connString = "Data Source=localhost\\SQL2025DEV;Initial Catalog=QuanLyNguoiDung;Integrated Security=True;Trust Server Certificate=True";
 
-        public static void AddUser(User user)
-        {
-            string query = "INSERT INTO Users (TenDangNhap, MatKhauBam, Salt, HoTen, Email) VALUES (@TenDangNhap, @MatKhauBam, @Salt, @HoTen, @Email)";
+        public static async Task<bool> TestConnection() {
             var connection = new SqlConnection(connString);
 
             try
             {
-                connection.Open();
+                await connection.OpenAsync();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Không thể kết nối đến Server. Vui lòng kiểm tra lại mạng hoặc máy chủ!");
-                return;
+                MessageBox.Show("Không thể kết nối đến Server. Vui lòng kiểm tra lại mạng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
             }
+            return true;
+        }
+
+        public static void AddUser(User user)
+        {
+            string query = "INSERT INTO Users (TenDangNhap, MatKhauBam, Salt, HoTen, Email) VALUES (@TenDangNhap, @MatKhauBam, @Salt, @HoTen, @Email)";
+            var connection = new SqlConnection(connString);
+            connection.Open();
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TenDangNhap", user.TenDangNhap);
@@ -41,6 +47,7 @@ namespace BT2._2_Nhom1
         public static async Task<User> GetUser(string username)
         {
             var connection = new SqlConnection(connString);
+            connection.Open();
             string query = "SELECT * FROM Users WHERE TenDangNhap = @TenDangNhap";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TenDangNhap", username);
@@ -69,6 +76,7 @@ namespace BT2._2_Nhom1
         public static async Task<User> GetUserPasswordAndSalt(string username)
         {
             var connection = new SqlConnection(connString);
+            connection.Open();
             string query = "SELECT UserId, MatKhauBam, Salt FROM Users WHERE TenDangNhap = @TenDangNhap";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TenDangNhap", username);
@@ -92,6 +100,7 @@ namespace BT2._2_Nhom1
         public static async Task UpdateLoginDate(string username)
         {
             var connection = new SqlConnection(connString);
+            connection.Open();
             string query = "UPDATE Users SET LanDangNhapCuoi = @LanDangNhapCuoi WHERE TenDangNhap = @TenDangNhap";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LanDangNhapCuoi", DateTime.Now);
@@ -104,19 +113,10 @@ namespace BT2._2_Nhom1
         public static async Task<bool> IsUserExist(string username)
         {
             var connection = new SqlConnection(connString);
+            connection.Open();
             string query = "SELECT UserId FROM Users WHERE TenDangNhap = @TenDangNhap";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@TenDangNhap", username);
-
-            try
-            {
-                connection.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể kết nối đến Server. Vui lòng kiểm tra lại mạng hoặc máy chủ!");
-                return false;
-            }
 
             using var reader = await command.ExecuteReaderAsync();
 

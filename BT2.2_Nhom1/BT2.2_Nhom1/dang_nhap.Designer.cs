@@ -40,11 +40,11 @@
             llbDangKy = new LinkLabel();
             lblLoiMatKhau = new Label();
             lblLoiDangNhap = new Label();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
+            pnlLeft = new Panel();
+            pnlDown = new Panel();
+            pnlRight = new Panel();
+            pnlUp = new Panel();
+            pnlUpBody = new Panel();
             SuspendLayout();
             // 
             // lblDangNhap
@@ -85,7 +85,6 @@
             txtSDT.Size = new Size(250, 27);
             txtSDT.TabIndex = 3;
             txtSDT.KeyPress += txtSDT_KeyPress;
-            txtSDT.Leave += txtSDT_Leave;
             // 
             // txtPassword
             // 
@@ -96,7 +95,6 @@
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(250, 27);
             txtPassword.TabIndex = 4;
-            txtPassword.Leave += txtPassword_Leave;
             // 
             // btnDangNhap
             // 
@@ -168,68 +166,70 @@
             // lblLoiDangNhap
             // 
             lblLoiDangNhap.AutoSize = true;
+            lblLoiDangNhap.Font = new Font("Segoe UI", 8F);
             lblLoiDangNhap.ForeColor = Color.Crimson;
             lblLoiDangNhap.Location = new Point(230, 129);
             lblLoiDangNhap.Name = "lblLoiDangNhap";
-            lblLoiDangNhap.Size = new Size(0, 20);
+            lblLoiDangNhap.Size = new Size(0, 19);
             lblLoiDangNhap.TabIndex = 10;
             // 
-            // panel1
+            // pnlLeft
             // 
-            panel1.BackColor = Color.FromArgb(0, 192, 0);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(3, 393);
-            panel1.TabIndex = 12;
+            pnlLeft.BackColor = Color.FromArgb(0, 192, 0);
+            pnlLeft.Dock = DockStyle.Left;
+            pnlLeft.Location = new Point(0, 0);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(3, 393);
+            pnlLeft.TabIndex = 12;
             // 
-            // panel2
+            // pnlDown
             // 
-            panel2.BackColor = Color.FromArgb(0, 192, 0);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(3, 390);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(547, 3);
-            panel2.TabIndex = 13;
+            pnlDown.BackColor = Color.FromArgb(0, 192, 0);
+            pnlDown.Dock = DockStyle.Bottom;
+            pnlDown.Location = new Point(3, 390);
+            pnlDown.Name = "pnlDown";
+            pnlDown.Size = new Size(547, 3);
+            pnlDown.TabIndex = 13;
             // 
-            // panel3
+            // pnlRight
             // 
-            panel3.BackColor = Color.FromArgb(0, 192, 0);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(547, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(3, 390);
-            panel3.TabIndex = 14;
+            pnlRight.BackColor = Color.FromArgb(0, 192, 0);
+            pnlRight.Dock = DockStyle.Right;
+            pnlRight.Location = new Point(547, 0);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Size = new Size(3, 390);
+            pnlRight.TabIndex = 14;
             // 
-            // panel4
+            // pnlUp
             // 
-            panel4.BackColor = Color.FromArgb(0, 192, 0);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(3, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(544, 80);
-            panel4.TabIndex = 15;
+            pnlUp.BackColor = Color.FromArgb(0, 192, 0);
+            pnlUp.Dock = DockStyle.Top;
+            pnlUp.Location = new Point(3, 0);
+            pnlUp.Name = "pnlUp";
+            pnlUp.Size = new Size(544, 80);
+            pnlUp.TabIndex = 15;
             // 
-            // panel5
+            // pnlUpBody
             // 
-            panel5.BackColor = Color.White;
-            panel5.Location = new Point(3, 3);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(544, 74);
-            panel5.TabIndex = 0;
+            pnlUpBody.BackColor = Color.White;
+            pnlUpBody.Location = new Point(3, 3);
+            pnlUpBody.Name = "pnlUpBody";
+            pnlUpBody.Size = new Size(544, 74);
+            pnlUpBody.TabIndex = 0;
             // 
             // dang_nhap
             // 
+            AcceptButton = btnDangNhap;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(550, 393);
             Controls.Add(lblDangNhap);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(pnlUpBody);
+            Controls.Add(pnlUp);
+            Controls.Add(pnlRight);
+            Controls.Add(pnlDown);
+            Controls.Add(pnlLeft);
             Controls.Add(lblLoiMatKhau);
             Controls.Add(lblLoiDangNhap);
             Controls.Add(llbDangKy);
@@ -245,7 +245,6 @@
             Name = "dang_nhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Leave += txtPassword_Leave;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -264,10 +263,10 @@
         private LinkLabel llbDangKy;
         private Label lblLoiMatKhau;
         private Label lblLoiDangNhap;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
+        private Panel pnlLeft;
+        private Panel pnlDown;
+        private Panel pnlRight;
+        private Panel pnlUp;
+        private Panel pnlUpBody;
     }
 }
